@@ -72,8 +72,8 @@ namespace L02_Blackmailer {
     }
 
     function chooseAlphabet(_event: PointerEvent): void {
-        let target:Node = <Node> _event.target;
-        chosenCharacters =  target.textContent;
+        //let target:Node = <Node> _event.target;
+        //chosenCharacters =  target.textContent;
         
         console.log(chosenCharacters);
     }
