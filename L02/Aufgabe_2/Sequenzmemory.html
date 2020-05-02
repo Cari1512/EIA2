@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sequenzmemory</title>
+    <link rel="stylesheet" href="Sequenzmemory.css">
+    <script src="Sequenzmemory.js"></script>
+</head>
+<body>
+    <h1>Sequenzmemory</h1>
+    <p1>Spielanleitung: Gebe die Anzahl an Fehlversuchen ein und suche entweder eine vorgegebene Sequenz aus oder erstelle selber eine Spielsequenz. Wenn du dir die durchmischte Sequenz gemerkt hast drücke auf Start um das Spiel zu beginnen. Decke die Karten in der richtigen Reihenfolge auf.</p1>
+    <form  id= OrderForm method="get" action="">
+    <div id= "input">
+        <label for="chances">Anzahl Fehlversuche:</label>
+        <input type="number" name="chances" placeholder="0" />
+        <!-- <label for="Sequenz">eigene Sequenz:</label> -->
+        <!-- <input type="text" name="Sequenz" placeholder="Sequenz..." /> -->
+        <label for="Sequence">Oder:</label>
+        <select id="Sequence" name="Sequence">
+          <option value="Programmieren">Programmieren</option>
+          <option value="Objekt">Objekt</option>
+          <option value="Event">Event</option>
+          <option value="viewport">viewport</option>
+          <option value="EIA2">EIA2</option>
+          <option value="script">script</option>
+          <option value="classname">classname</option>
+          <option value="compiler">compiler</option>
+          <option value="error">error</option>
+          <option value="function">function</option>
+        </select> 
+    </div>
+</form>
+
+    <div id="playgroundBig">
+        <span id="counter">counter</span>
+        <button id="start"> Start</button>
+        <span id ="solution">Sequenz</span>
+        <div id = "playground"></div>
+    </div>
+</body>
+</html>

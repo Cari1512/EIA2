@@ -1,0 +1,49 @@
+body {
+    text-align: center;
+    display: grid;
+    grid-template-rows: min-content min-content auto;
+    grid-column: span 2;
+}
+#input{
+    border: thin solid black;
+    margin: 1em;
+    position: absolute;
+    left: 100px;
+    top: 400px;
+}
+input   {
+    display: block;
+    padding: 2em;
+}
+
+#playgroundBig{
+    border: thin solid black;
+    margin: 1em;
+    position: absolute;
+    right: 300px;
+    top: 200px;
+    width: 700px;
+    height: 600px;
+}
+
+#counter{
+    border: thin solid black;
+    margin: 1em;
+    position: absolute;
+    left: 50px;
+    top: 50px;
+}
+
+#start{
+    position: absolute;
+    top: 60px;
+    left: 250px;
+    font-size: 2em;
+}
+#solution{
+    position: absolute;
+    top: 65px;
+    right: 200px;
+    font-size: 1em;
+}
+
