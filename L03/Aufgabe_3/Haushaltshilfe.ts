@@ -35,9 +35,14 @@ namespace Haushaltshilfe{
         
         let plus:HTMLDivElement = document.createElement("div");
         plus.setAttribute("class", "addArtikel");
+        plus.innerHTML="+";
         plus.addEventListener("click",Add);
+        let d_Trash:HTMLElement =<HTMLElement>document.createElement("i");
+        d_Trash.setAttribute("class", "far fa-trash-alt");
+        
         Box.appendChild(Erledigung);
         Box.appendChild(plus);
+        Box.appendChild(d_Trash);
         let column:HTMLFormElement = <HTMLFormElement>document.querySelector("form#column1");
         column.appendChild(Box);
 
@@ -49,20 +54,52 @@ namespace Haushaltshilfe{
 function Add (_event:Event ): void {
     let selectedTask = (<HTMLInputElement>document.querySelector(".Erledigung")).value;
     console.log(selectedTask);
+    //let currentform:HTMLElement =<HTMLElement>document.querySelector();
+    let deleter:HTMLElement =<HTMLElement>document.createElement("i");
+    deleter.setAttribute("class", "far fa-trash-alt");
+    let form:HTMLDivElement = <HTMLDivElement>document.createElement("div");
+    form.setAttribute("class", "form");
+    form.addEventListener("change", displayOrder);
+    let Box:HTMLDivElement= <HTMLDivElement>document.querySelector("div.box");
+    Box.appendChild(form);
+    form.appendChild(deleter);
     switch(selectedTask){
         case "Einkaufen":
-            Einkaufen;
+            Einkaufen;//Warum kann die Funktion nicht ausgeführt werden
             break;
         case "Haushalt":
-            Haushalt;
-            console.log("Haushaltfunction");
+            Haushalt; //Warum kann die Funktion nicht ausgeführt werden
+            console.log("Haushaltfunction")
+                let what:HTMLInputElement=<HTMLInputElement>document.createElement("input");
+                what.setAttribute("class", "Artikel")
+                what.placeholder="Wie können wir Sie unterstützen?";
+                let amount:HTMLInputElement=<HTMLInputElement>document.createElement("input");
+                amount.setAttribute("class", "Dauer")
+                let label:HTMLLabelElement=<HTMLLabelElement>document.createElement("label");
+                label.innerText="Dauer";
+                label.htmlFor="form";
+                
             break;
         case "Fahrdienst":
-            Fahrdienst;
+            Fahrdienst;//Warum kann die Funktion nicht ausgeführt werden
             break;
     }
 };
 
+
+
+
+
+
+
+
+
+
+
+
+function displayOrder():void{
+    console.log("displayOrder")
+}
 function Einkaufen(): void{
     console.log("Einkauffunction")
 }

@@ -31,29 +31,53 @@ var Haushaltshilfe;
         ;
         let plus = document.createElement("div");
         plus.setAttribute("class", "addArtikel");
+        plus.innerHTML = "+";
         plus.addEventListener("click", Add);
+        let d_Trash = document.createElement("i");
+        d_Trash.setAttribute("class", "far fa-trash-alt");
         Box.appendChild(Erledigung);
         Box.appendChild(plus);
+        Box.appendChild(d_Trash);
         let column = document.querySelector("form#column1");
         column.appendChild(Box);
     }
     function Add(_event) {
         let selectedTask = document.querySelector(".Erledigung").value;
         console.log(selectedTask);
+        //let currentform:HTMLElement =<HTMLElement>document.querySelector();
+        let deleter = document.createElement("i");
+        deleter.setAttribute("class", "far fa-trash-alt");
+        let form = document.createElement("div");
+        form.setAttribute("class", "form");
+        form.addEventListener("change", displayOrder);
+        let Box = document.querySelector("div.box");
+        Box.appendChild(form);
+        form.appendChild(deleter);
         switch (selectedTask) {
             case "Einkaufen":
-                Einkaufen;
+                Einkaufen; //Warum kann die Funktion nicht ausgeführt werden
                 break;
             case "Haushalt":
-                Haushalt;
+                Haushalt; //Warum kann die Funktion nicht ausgeführt werden
                 console.log("Haushaltfunction");
+                let what = document.createElement("input");
+                what.setAttribute("class", "Artikel");
+                what.placeholder = "Wie können wir Sie unterstützen?";
+                let amount = document.createElement("input");
+                amount.setAttribute("class", "Dauer");
+                let label = document.createElement("label");
+                label.innerText = "Dauer";
+                label.htmlFor = "form";
                 break;
             case "Fahrdienst":
-                Fahrdienst;
+                Fahrdienst; //Warum kann die Funktion nicht ausgeführt werden
                 break;
         }
     }
     ;
+    function displayOrder() {
+        console.log("displayOrder");
+    }
     function Einkaufen() {
         console.log("Einkauffunction");
     }
