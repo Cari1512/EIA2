@@ -30,7 +30,7 @@ header {
 }
 .box{
     width: 600px;
-    height: 400px;
+    height: auto;
     border: 2px solid black;
     margin: auto;
     padding-top: 20px;
@@ -42,4 +42,21 @@ header {
     background-color: grey;
     display: inline-block;
     
+}
+.form{
+    height: 200px;
+    width: 300px;
+    margin: auto;
+    background-color: lavender;
+    display: grid;
+    grid-column-gap: 20px;
+    grid-row: auto;
+    border:2px solid black;
+    padding: 20px;
+}
+#trashform{
+    
+    right: 10px;
+    bottom: 10px;
+
 }
