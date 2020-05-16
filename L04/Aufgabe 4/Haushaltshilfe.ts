@@ -7,7 +7,7 @@ namespace Haushaltshilfe {
         let Send: HTMLButtonElement = <HTMLButtonElement>document.querySelector("button#Send");
         let Help: HTMLElement = <HTMLElement>document.querySelector("#Help");
 
-        Task.addEventListener("click", newTask);
+        Task.addEventListener("click", newTask(Event, Data));
         Send.addEventListener("click", send);
         Help.addEventListener("click", help)
 
@@ -20,16 +20,16 @@ namespace Haushaltshilfe {
     function send(_event: Event): void {
         alert("Ihr Auftrag wurde abgeschickt");
     }
-    function newTask(_event: Event): void {
+    function newTask( _event:Event,_data: Data): void {
         let Box: HTMLDivElement = document.createElement("div");
         Box.setAttribute("class", "box");
         let Erledigung: HTMLSelectElement = document.createElement("select");
         Erledigung.setAttribute("class", "Erledigung");
-        var array = ["Einkaufen", "Haushalt", "Fahrdienst"];
-        for (var i = 0; i < array.length; i++) {
+        //var array = ["Einkaufen", "Haushalt", "Fahrdienst"];
+        for (let task in _data) {
             var option = document.createElement("option");
-            option.value = array[i];
-            option.text = array[i];
+            option.value = task;
+            option.text = task;
             Erledigung.appendChild(option);
         };
 
