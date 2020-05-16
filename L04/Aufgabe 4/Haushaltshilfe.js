@@ -3,6 +3,7 @@ var Haushaltshilfe;
 (function (Haushaltshilfe) {
     window.addEventListener("load", handleLoad);
     function handleLoad(_event) {
+        Haushaltshilfe.test;
         let Send = document.querySelector("button#Send");
         let Help = document.querySelector("#Help");
         newTask(Haushaltshilfe.Data);
@@ -15,12 +16,12 @@ var Haushaltshilfe;
     function send(_event) {
         alert("Ihr Auftrag wurde abgeschickt");
     }
+    // 
     function newTask(_data) {
         let Box = document.createElement("div");
         Box.setAttribute("class", "box");
         let Erledigung = document.createElement("select");
         Erledigung.setAttribute("class", "Erledigung");
-        //var array = ["Einkaufen", "Haushalt", "Fahrdienst"];
         for (let task in _data) {
             var option = document.createElement("option");
             option.value = task;

@@ -3,6 +3,7 @@ namespace Haushaltshilfe {
 
 
     function handleLoad(_event: Event): void {
+        test;
         
         let Send: HTMLButtonElement = <HTMLButtonElement>document.querySelector("button#Send");
         let Help: HTMLElement = <HTMLElement>document.querySelector("#Help");
@@ -20,12 +21,13 @@ namespace Haushaltshilfe {
     function send(_event: Event): void {
         alert("Ihr Auftrag wurde abgeschickt");
     }
-    function newTask(_data: Data): void {
+    // 
+    function newTask( _data:Data): void {
         let Box: HTMLDivElement = document.createElement("div");
         Box.setAttribute("class", "box");
         let Erledigung: HTMLSelectElement = document.createElement("select");
         Erledigung.setAttribute("class", "Erledigung");
-        //var array = ["Einkaufen", "Haushalt", "Fahrdienst"];
+        
         for (let task in _data) {
             var option = document.createElement("option");
             option.value = task;
@@ -50,6 +52,7 @@ namespace Haushaltshilfe {
 
 
     }
+
 
     //Probleme: Bei ändern der Erledigung müssen die alten forms gelöscht werden
     
