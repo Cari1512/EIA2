@@ -3,10 +3,9 @@ var Haushaltshilfe;
 (function (Haushaltshilfe) {
     window.addEventListener("load", handleLoad);
     function handleLoad(_event) {
-        let Task = document.querySelector("button#Task");
         let Send = document.querySelector("button#Send");
         let Help = document.querySelector("#Help");
-        Task.addEventListener("click", newTask(Event, Haushaltshilfe.Data));
+        newTask(Haushaltshilfe.Data);
         Send.addEventListener("click", send);
         Help.addEventListener("click", help);
     }
@@ -16,7 +15,7 @@ var Haushaltshilfe;
     function send(_event) {
         alert("Ihr Auftrag wurde abgeschickt");
     }
-    function newTask(_event, _data) {
+    function newTask(_data) {
         let Box = document.createElement("div");
         Box.setAttribute("class", "box");
         let Erledigung = document.createElement("select");
@@ -43,7 +42,6 @@ var Haushaltshilfe;
         column.appendChild(Box);
     }
     //Probleme: Bei ändern der Erledigung müssen die alten forms gelöscht werden
-    //Bei Neuer Erledigung wird bei jedem Case nur noch das Zuletzt genutzte case dargestellt
     function Add(_event) {
         //let selectedTask = this.siblingNode.value;
         let selectedTask = document.querySelector(".Erledigung").value; //auf sibling zugreifen von Add?

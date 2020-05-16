@@ -3,11 +3,11 @@ namespace Haushaltshilfe {
 
 
     function handleLoad(_event: Event): void {
-        let Task: HTMLButtonElement = <HTMLButtonElement>document.querySelector("button#Task");
+        
         let Send: HTMLButtonElement = <HTMLButtonElement>document.querySelector("button#Send");
         let Help: HTMLElement = <HTMLElement>document.querySelector("#Help");
 
-        Task.addEventListener("click", newTask(Event, Data));
+        newTask(Data);
         Send.addEventListener("click", send);
         Help.addEventListener("click", help)
 
@@ -20,7 +20,7 @@ namespace Haushaltshilfe {
     function send(_event: Event): void {
         alert("Ihr Auftrag wurde abgeschickt");
     }
-    function newTask( _event:Event,_data: Data): void {
+    function newTask(_data: Data): void {
         let Box: HTMLDivElement = document.createElement("div");
         Box.setAttribute("class", "box");
         let Erledigung: HTMLSelectElement = document.createElement("select");
@@ -52,7 +52,7 @@ namespace Haushaltshilfe {
     }
 
     //Probleme: Bei ändern der Erledigung müssen die alten forms gelöscht werden
-    //Bei Neuer Erledigung wird bei jedem Case nur noch das Zuletzt genutzte case dargestellt
+    
     function Add(this: any, _event: Event): void {
         //let selectedTask = this.siblingNode.value;
         let selectedTask = (<HTMLInputElement>document.querySelector(".Erledigung")).value;//auf sibling zugreifen von Add?
