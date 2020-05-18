@@ -1,19 +1,20 @@
 namespace Haushaltshilfe {
     export let Data: Data = {
         Einkaufen: [
-            {category: "Produkt", name: "Apfel", price:10},
-            {category: "Produkt", name: "Brot", price:10},
-            {category: "Produkt", name: "Milch", price:10},
-            {category: "Produkt", name: "Eier", price:10},
-            {category: "Produkt", name: "Nudeln", price:10},
-            {category: "Produkt", name: "Zwiebeln", price:10},
-            {category: "Menge", name: "", price:0},
-            {category: "Einheit", name: "kg", price:0},
-            {category: "Einheit", name: "Pack", price:0},
-            {category: "Einheit", name: "Gramm", price:0},
-            {category: "Einheit", name: "Liter", price:0},
-            {category: "Einheit", name: "Karton", price:0},
-            {category: "Einheit", name: "Leib", price:0},
+            Produkt: [
+            {name: "Apfel", price:10},
+            {name: "Brot", price:10},
+            {name: "Milch", price:10},
+            {name: "Eier", price:10},
+            {name: "Nudeln", price:10},
+            {name: "Zwiebeln", price:10},
+            { name: "", price:0},
+            {name: "kg", price:0},
+            {name: "Pack", price:0},
+            {name: "Gramm", price:0},
+            {name: "Liter", price:0},
+            {name: "Karton", price:0},
+            { name: "Leib", price:0},
 
         ],
         Haushalt: [

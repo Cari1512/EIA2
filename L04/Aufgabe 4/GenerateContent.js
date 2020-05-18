@@ -180,13 +180,13 @@ var Haushaltshilfe;
     }
     Haushaltshilfe.fahrdienst = fahrdienst;
     function generateContent(_data) {
-        for (let category in _data) {
+        for (let category in _data.category) {
             let items = _data[category];
             let group = null; //es darf auch null sein
             switch (category) {
                 case "Einkaufen":
                     console.log(category);
-                    group = createSelect(items, task);
+                    group = createSelect(items, category);
                     break;
                 case "Haushalt":
                     // group = createSingle(items, category);
@@ -200,5 +200,6 @@ var Haushaltshilfe;
         }
     }
     Haushaltshilfe.generateContent = generateContent;
+    createSelect;
 })(Haushaltshilfe || (Haushaltshilfe = {}));
 //# sourceMappingURL=GenerateContent.js.map

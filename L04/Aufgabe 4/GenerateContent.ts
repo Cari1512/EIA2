@@ -206,14 +206,15 @@ namespace Haushaltshilfe {
 
 
     export function generateContent(_data: Data): void{
-        for (let category in _data) {
+       
+        for (let category in _data.category) {
             let items: Item[] = _data[category];
-             
+            
             let group: HTMLElement | null = null; //es darf auch null sein
             switch (category) {
                 case "Einkaufen":
                     console.log(category);
-                    group = createSelect(items, task);
+                    group = createSelect(items, category);
                     break;
                 case "Haushalt":
                    // group = createSingle(items, category);
@@ -230,7 +231,7 @@ namespace Haushaltshilfe {
 
 
 
-
+createSelect
 
 
 

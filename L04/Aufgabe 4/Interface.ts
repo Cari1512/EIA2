@@ -1,9 +1,11 @@
 namespace Haushaltshilfe {
-
-    export interface Item {
-        category:string;
+    export interface Part{
         name: string;
         price: number;
+    }
+    export interface Item {
+        [category:string]: Part[];
+        
     }
 
     export interface Data {
