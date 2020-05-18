@@ -1,6 +1,6 @@
 namespace Haushaltshilfe {
     export let Data: Data = {
-        Einkaufen: [
+        Einkaufen: {
             Produkt: [
             {name: "Apfel", price:10},
             {name: "Brot", price:10},
@@ -15,7 +15,7 @@ namespace Haushaltshilfe {
             {name: "Liter", price:0},
             {name: "Karton", price:0},
             { name: "Leib", price:0},
-
+            },
         ],
         Haushalt: [
             {category: "Produkt", name: "Putzen", price:10},
