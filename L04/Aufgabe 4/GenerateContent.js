@@ -67,45 +67,45 @@ var Haushaltshilfe;
     ;
     function einkaufen(form) {
         console.log("Einkauffunktion");
-        let what = document.createElement("input");
-        what.setAttribute("class", "Artikel");
-        what.placeholder = "Was möchten Sie Einkaufen?";
-        let amount1 = document.createElement("input");
-        amount1.setAttribute("class", "Menge");
-        amount1.placeholder = "1";
-        let label1 = document.createElement("label");
-        label1.innerText = "Menge";
-        label1.htmlFor = "Menge";
-        let unit1 = document.createElement("select");
-        unit1.setAttribute("class", "Einheit");
-        var array = ["Pack", "Gramm", "kg", "Liter", "ml", "Flaschen", "Leib", "Karton"];
-        for (var i = 0; i < array.length; i++) {
-            var option = document.createElement("option");
-            option.value = array[i];
-            option.text = array[i];
-            unit1.appendChild(option);
-        }
-        ;
-        var array1 = ["Aldi", "Lidl", "Netto", "Rewe"];
-        let radiospan = document.createElement("span");
-        for (var i = 0; i < array1.length; i++) {
-            let where = document.createElement("input");
-            where.setAttribute("type", "radio");
-            where.value = array1[i];
-            where.id = array1[i];
-            where.name = "Container";
-            let label = document.createElement("label");
-            label.htmlFor = array1[i];
-            label.innerText = array1[i];
-            radiospan.appendChild(label);
-            radiospan.appendChild(where);
-        }
-        ;
-        form.appendChild(what);
-        form.appendChild(label1);
-        form.appendChild(amount1);
-        form.appendChild(unit1);
-        form.appendChild(radiospan);
+        generateContent(Haushaltshilfe.Data);
+        // generateDetail(Data);
+        // let what: HTMLInputElement = <HTMLInputElement>document.createElement("input");
+        //         what.setAttribute("class", "Artikel");
+        //         what.placeholder = "Was möchten Sie Einkaufen?";
+        //         let amount1: HTMLInputElement = <HTMLInputElement>document.createElement("input");
+        //         amount1.setAttribute("class", "Menge");
+        //         amount1.placeholder = "1";
+        //         let label1: HTMLLabelElement = <HTMLLabelElement>document.createElement("label");
+        //         label1.innerText = "Menge";
+        //         label1.htmlFor = "Menge";
+        //         let unit1: HTMLSelectElement = document.createElement("select");
+        //         unit1.setAttribute("class", "Einheit");
+        //         var array = ["Pack", "Gramm", "kg", "Liter","ml","Flaschen", "Leib","Karton"];
+        //         for (var i = 0; i < array.length; i++) {
+        //             var option = document.createElement("option");
+        //             option.value = array[i];
+        //             option.text = array[i];
+        //             unit1.appendChild(option);
+        //         };
+        //         var array1 = ["Aldi", "Lidl", "Netto", "Rewe"];
+        //         let radiospan:HTMLSpanElement= <HTMLSpanElement>document.createElement("span");
+        //         for (var i = 0; i < array1.length; i++) {
+        //             let where:HTMLInputElement = <HTMLInputElement>document.createElement("input");
+        //             where.setAttribute("type","radio");
+        //             where.value = array1[i];
+        //             where.id = array1[i];
+        //             where.name="Container";
+        //             let label:HTMLLabelElement =<HTMLLabelElement>document.createElement("label");
+        //             label.htmlFor=array1[i];
+        //             label.innerText=array1[i];
+        //             radiospan.appendChild(label);
+        //             radiospan.appendChild(where);
+        //         };
+        //         form.appendChild(what);
+        //         form.appendChild(label1);
+        //         form.appendChild(amount1);
+        //         form.appendChild(unit1);
+        //         form.appendChild(radiospan);
     }
     Haushaltshilfe.einkaufen = einkaufen;
     function haushalt(form) {
@@ -179,5 +179,26 @@ var Haushaltshilfe;
         form.appendChild(radiospan1);
     }
     Haushaltshilfe.fahrdienst = fahrdienst;
+    function generateContent(_data) {
+        for (let category in _data) {
+            let items = _data[category];
+            let group = null; //es darf auch null sein
+            switch (category) {
+                case "Einkaufen":
+                    console.log(category);
+                    group = createSelect(items, task);
+                    break;
+                case "Haushalt":
+                    // group = createSingle(items, category);
+                    break;
+                case "Fahrdienst":
+                    // group = createMultiple(items, category);
+                    break;
+                default:
+                    break;
+            }
+        }
+    }
+    Haushaltshilfe.generateContent = generateContent;
 })(Haushaltshilfe || (Haushaltshilfe = {}));
 //# sourceMappingURL=GenerateContent.js.map
