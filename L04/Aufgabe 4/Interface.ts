@@ -16,7 +16,7 @@ namespace Haushaltshilfe {
         name:string;
     }
 
-    export interface Detail{
+    export interface Detail {
         [space:string]: Element[];
     }
 
