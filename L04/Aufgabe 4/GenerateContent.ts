@@ -1,4 +1,4 @@
-namespace Haushaltshilfe {
+namespace HomeHelp {
 
     
 
@@ -65,13 +65,13 @@ namespace Haushaltshilfe {
 
         //Was soll passieren bei jedem selektierten Task?
         switch (selectedTask) {
-            case "Einkaufen":
+            case "einkaufen":
                 einkaufen(form);
                 break;
-            case "Haushalt":
+            case "haushalt":
                 haushalt(form);
                 break;
-            case "Fahrdienst":
+            case "fahrdienst":
                 fahrdienst(form);
                 break;
         }

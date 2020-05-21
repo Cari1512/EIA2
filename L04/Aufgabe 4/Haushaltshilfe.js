@@ -1,11 +1,11 @@
 "use strict";
-var Haushaltshilfe;
-(function (Haushaltshilfe) {
+var HomeHelp;
+(function (HomeHelp) {
     window.addEventListener("load", handleLoad);
     function handleLoad(_event) {
         let Send = document.querySelector("button#Send");
         let Help = document.querySelector("#Help");
-        Haushaltshilfe.newTask(Haushaltshilfe.Data);
+        HomeHelp.newTask(Data);
         Send.addEventListener("click", send);
         Help.addEventListener("click", help);
     }
@@ -19,15 +19,15 @@ var Haushaltshilfe;
     function deleteForm(_event) {
         this.parentNode.remove();
     }
-    Haushaltshilfe.deleteForm = deleteForm;
+    HomeHelp.deleteForm = deleteForm;
     ;
     function deleteBox(_event) {
         this.parentNode.remove();
     }
-    Haushaltshilfe.deleteBox = deleteBox;
+    HomeHelp.deleteBox = deleteBox;
     function displayOrder() {
         console.log("displayOrder");
     }
-    Haushaltshilfe.displayOrder = displayOrder;
-})(Haushaltshilfe || (Haushaltshilfe = {}));
+    HomeHelp.displayOrder = displayOrder;
+})(HomeHelp || (HomeHelp = {}));
 //# sourceMappingURL=Haushaltshilfe.js.map

@@ -1,6 +1,6 @@
 "use strict";
-var Haushaltshilfe;
-(function (Haushaltshilfe) {
+var HomeHelp;
+(function (HomeHelp) {
     function newTask(_data) {
         let Box = document.createElement("div");
         Box.setAttribute("class", "box");
@@ -31,7 +31,7 @@ var Haushaltshilfe;
         let column = document.querySelector("form#column1");
         column.appendChild(Box);
     }
-    Haushaltshilfe.newTask = newTask;
+    HomeHelp.newTask = newTask;
     function add(_event) {
         //Was wurde Selektiert?
         let selectedTask = document.querySelector(".Erledigung").value;
@@ -40,11 +40,11 @@ var Haushaltshilfe;
         let deleter = document.createElement("i");
         deleter.setAttribute("class", "far fa-trash-alt");
         deleter.setAttribute("id", "trashform");
-        deleter.addEventListener("click", Haushaltshilfe.deleteForm);
+        deleter.addEventListener("click", HomeHelp.deleteForm);
         //form div wird erstellt und ein change eventlistener drangehängt
         let form = document.createElement("div");
         form.setAttribute("class", "form");
-        form.addEventListener("change", Haushaltshilfe.displayOrder);
+        form.addEventListener("change", HomeHelp.displayOrder);
         //Müll und form wird in die Box gehängt
         let target = _event.target;
         let Box = target.parentNode;
@@ -52,22 +52,22 @@ var Haushaltshilfe;
         form.appendChild(deleter);
         //Was soll passieren bei jedem selektierten Task?
         switch (selectedTask) {
-            case "Einkaufen":
+            case "einkaufen":
                 einkaufen(form);
                 break;
-            case "Haushalt":
+            case "haushalt":
                 haushalt(form);
                 break;
-            case "Fahrdienst":
+            case "fahrdienst":
                 fahrdienst(form);
                 break;
         }
     }
-    Haushaltshilfe.add = add;
+    HomeHelp.add = add;
     ;
     function einkaufen(form) {
         console.log("Einkauffunktion");
-        generateContent(Haushaltshilfe.Data);
+        generateContent(Data);
         // generateDetail(Data);
         // let what: HTMLInputElement = <HTMLInputElement>document.createElement("input");
         //         what.setAttribute("class", "Artikel");
@@ -107,7 +107,7 @@ var Haushaltshilfe;
         //         form.appendChild(unit1);
         //         form.appendChild(radiospan);
     }
-    Haushaltshilfe.einkaufen = einkaufen;
+    HomeHelp.einkaufen = einkaufen;
     function haushalt(form) {
         console.log("Haushaltfunction");
         let what = document.createElement("input");
@@ -135,7 +135,7 @@ var Haushaltshilfe;
         form.appendChild(amount);
         form.appendChild(unit);
     }
-    Haushaltshilfe.haushalt = haushalt;
+    HomeHelp.haushalt = haushalt;
     function fahrdienst(form) {
         console.log("Fahrdienstfunction");
         let what2 = document.createElement("input");
@@ -178,7 +178,7 @@ var Haushaltshilfe;
         form.appendChild(unit2);
         form.appendChild(radiospan1);
     }
-    Haushaltshilfe.fahrdienst = fahrdienst;
+    HomeHelp.fahrdienst = fahrdienst;
     function generateContent(_data) {
         for (let category in _data.category) {
             let items = _data[category];
@@ -199,7 +199,7 @@ var Haushaltshilfe;
             }
         }
     }
-    Haushaltshilfe.generateContent = generateContent;
+    HomeHelp.generateContent = generateContent;
     createSelect;
-})(Haushaltshilfe || (Haushaltshilfe = {}));
+})(HomeHelp || (HomeHelp = {}));
 //# sourceMappingURL=GenerateContent.js.map

@@ -1,4 +1,5 @@
-namespace Haushaltshilfe {
+namespace HomeHelp {
+
     export interface Part{
         name: string;
         price: number;
@@ -11,7 +12,7 @@ namespace Haushaltshilfe {
     export interface Data {
         [task: string]: Item[];
     }
-
+    
     export interface Element{
         name:string;
     }

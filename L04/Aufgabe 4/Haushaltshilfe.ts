@@ -1,4 +1,4 @@
-namespace Haushaltshilfe {
+namespace HomeHelp {
     window.addEventListener("load", handleLoad);
 
 
