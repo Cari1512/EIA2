@@ -8,7 +8,7 @@ namespace L05 {
         let Help: HTMLElement = <HTMLElement>document.querySelector("#Help");
 
         generateContent(data);
-        generateDetail(data);
+        generateDetail(detail);
         Send.addEventListener("click", send);
         Help.addEventListener("click", help)
 

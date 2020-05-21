@@ -31,6 +31,7 @@ var L05;
             switch (category) {
                 case "ort":
                     group = createDataList(element, category);
+                    break;
                 case "fahrt":
                     group = createSingle(element, category);
                     break;
@@ -103,7 +104,7 @@ var L05;
         let group = document.createElement("div");
         let input = document.createElement("input");
         input.setAttribute("list", _product);
-        input.setAttribute("placeholder", "Choose " + _product);
+        input.setAttribute("placeholder", "Welcher Supermarkt?");
         input.name = _product;
         let datalist = document.createElement("datalist");
         datalist.id = _product;
@@ -114,6 +115,24 @@ var L05;
             group.appendChild(input);
             group.appendChild(datalist);
             datalist.appendChild(option);
+        }
+        return group;
+    }
+    function createSingle(_elements, _product) {
+        let group = document.createElement("div");
+        for (let item of _elements) {
+            let radio = document.createElement("input");
+            radio.type = "radio";
+            radio.value = item.name;
+            radio.name = _product;
+            radio.id = item.name;
+            let br = document.createElement("br");
+            let label = document.createElement("label");
+            label.textContent = item.name;
+            label.htmlFor = item.name;
+            group.appendChild(radio);
+            group.appendChild(label);
+            group.appendChild(br);
         }
         return group;
     }

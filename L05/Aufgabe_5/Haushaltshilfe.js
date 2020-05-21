@@ -6,7 +6,7 @@ var L05;
         let Send = document.querySelector("button#Send");
         let Help = document.querySelector("#Help");
         L05.generateContent(L05.data);
-        L05.generateDetail(L05.data);
+        L05.generateDetail(L05.detail);
         Send.addEventListener("click", send);
         Help.addEventListener("click", help);
     }

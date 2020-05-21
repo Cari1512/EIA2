@@ -30,6 +30,7 @@ namespace L05 {
             switch (category) {
                 case "ort":
                     group = createDataList(element, category);
+                    break;
                 case "fahrt":
                     group = createSingle(element, category);
                     break;
@@ -120,7 +121,7 @@ namespace L05 {
         let group : HTMLDivElement = document.createElement("div");
         let input: HTMLInputElement = document.createElement("input");
         input.setAttribute("list", _product);
-        input.setAttribute("placeholder", "Choose " + _product);
+        input.setAttribute("placeholder", "Welcher Supermarkt?");
         input.name = _product;
         let datalist: HTMLDataListElement = document.createElement("datalist");
         datalist.id = _product;
@@ -136,5 +137,27 @@ namespace L05 {
         }
         return group;
     }
+    function createSingle(_elements: Element[], _product: string): HTMLElement | null {
+        let group: HTMLDivElement = document.createElement("div");
+        for (let item of _elements) {
+            let radio: HTMLInputElement = document.createElement("input");
+            radio.type = "radio";
+            radio.value = item.name;
+            radio.name = _product;
+            radio.id = item.name;
+
+            let br: HTMLBRElement = document.createElement("br");
+
+            let label: HTMLLabelElement = document.createElement("label");
+            label.textContent = item.name;
+            label.htmlFor = item.name;
+
+            group.appendChild(radio);
+            group.appendChild(label);
+            group.appendChild(br);
+        }
+        return group;
+    }
+
 
 }
