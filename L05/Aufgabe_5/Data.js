@@ -11,9 +11,9 @@ var L05;
             { name: "Zwiebeln", unit: "Stück", price: 10 },
         ],
         household: [
-            { name: "Putzen", unit: "h", price: 10 },
-            { name: "Kochen", unit: "h", price: 10 },
-            { name: "Gartenarbeit", unit: "h", price: 10 },
+            { name: "Putzen", unit: "1h", price: 10 },
+            { name: "Kochen", unit: "1h", price: 10 },
+            { name: "Gartenarbeit", unit: "1h", price: 10 },
         ],
         driving: [
             { name: "Supermarkt", unit: "km", price: 10 },

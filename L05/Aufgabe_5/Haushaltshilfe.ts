@@ -6,8 +6,8 @@ namespace L05 {
 
         let Send: HTMLButtonElement = <HTMLButtonElement>document.querySelector("button#Send");
         let Help: HTMLElement = <HTMLElement>document.querySelector("#Help");
-        let toOrder: HTMLFormElement = <HTMLFormElement>document.querySelector("#toOrder");
-
+        let toOrder: HTMLButtonElement = <HTMLButtonElement>document.querySelector("#toOrder");
+        let totalCost: number = 0;
         generateContent(data);
         generateDetail(detail);
         Send.addEventListener("click", send);
@@ -18,8 +18,15 @@ namespace L05 {
     }
     function handleChange(_event:Event): void{
         let formData: FormData = new FormData(document.forms[0]);
+        let order:HTMLDivElement = <HTMLDivElement>document.querySelector("#order");
+        order.innerHTML="";
         let productOrder:HTMLDivElement = document.createElement("div");
-        let order:HTMLDivElement |null =document.querySelector("#order");
+        productOrder.setAttribute("id", "productOrder");
+        let householdOrder:HTMLDivElement = document.createElement("div");
+        householdOrder.setAttribute("id", "householdOrder");
+        let drivingOrder:HTMLDivElement = document.createElement("div");
+        drivingOrder.setAttribute("id", "drivingOrder");
+        let br:HTMLBRElement = document.createElement("br");
         for (let entry of formData) {
             let selector: string = "[value='" + entry[1] + "']";
             let item: HTMLInputElement = <HTMLInputElement>document.querySelector(selector);
@@ -38,8 +45,29 @@ namespace L05 {
                 productOrder.innerHTML+= ""+amount;
                 productOrder.innerHTML+= ""+einheit;
                 productOrder.innerHTML+= ""+markt;
+                productOrder.appendChild(br);
                 order.appendChild(productOrder);
-                
+                break;
+                case"household":
+                let taskPrice: number =Number(item.getAttribute("price"));
+                let time: string = String(item.getAttribute("unit"));
+                householdOrder.innerHTML+= "" + entry[1];
+                householdOrder.innerHTML+= ""+taskPrice.toFixed(2)+"€";
+                householdOrder.innerHTML+= ""+time;
+                householdOrder.appendChild(br);
+                order.appendChild(householdOrder);
+                break;
+                case "driving":
+                let drivePrice: number =Number(item.getAttribute("price"));
+                let drive: string = String(formData.get("fahrt"));
+                if (drive== "Hin-und Rückfahrt"){
+                    drivePrice= drivePrice*2;
+                }
+                drivingOrder.innerHTML+= ""+entry[1];
+                drivingOrder.innerHTML+= ""+drive;
+                drivingOrder.innerHTML+= ""+ drivePrice.toFixed(2)+"€";
+                order.appendChild(drivingOrder);
+                break;
             }
     
         }
