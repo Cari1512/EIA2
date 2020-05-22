@@ -6,12 +6,13 @@ var L05;
         let Send = document.querySelector("button#Send");
         let Help = document.querySelector("#Help");
         let toOrder = document.querySelector("#toOrder");
-        let totalCost = 0;
+        let reset = document.querySelector("#reset");
         L05.generateContent(L05.data);
         L05.generateDetail(L05.detail);
         Send.addEventListener("click", send);
         Help.addEventListener("click", help);
         toOrder.addEventListener("click", handleChange);
+        reset.addEventListener("click", resetOrder);
     }
     function handleChange(_event) {
         let formData = new FormData(document.forms[0]);
@@ -65,6 +66,8 @@ var L05;
                     drivingOrder.innerHTML += "" + drivePrice.toFixed(2) + "€";
                     order.appendChild(drivingOrder);
                     break;
+                default:
+                    break;
             }
         }
     }
@@ -75,9 +78,9 @@ var L05;
         alert("Ihr Auftrag wurde abgeschickt");
     }
     // 
-    function displayOrder() {
-        console.log("displayOrder");
+    function resetOrder(_event) {
+        let order = document.querySelector("#order");
+        order.innerHTML = "";
     }
-    L05.displayOrder = displayOrder;
 })(L05 || (L05 = {}));
 //# sourceMappingURL=Haushaltshilfe.js.map

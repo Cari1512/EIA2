@@ -7,12 +7,13 @@ namespace L05 {
         let Send: HTMLButtonElement = <HTMLButtonElement>document.querySelector("button#Send");
         let Help: HTMLElement = <HTMLElement>document.querySelector("#Help");
         let toOrder: HTMLButtonElement = <HTMLButtonElement>document.querySelector("#toOrder");
-        let totalCost: number = 0;
+        let reset:HTMLButtonElement = <HTMLButtonElement>document.querySelector("#reset");
         generateContent(data);
         generateDetail(detail);
         Send.addEventListener("click", send);
         Help.addEventListener("click", help);
         toOrder.addEventListener("click", handleChange);
+        reset.addEventListener("click", resetOrder);
 
 
     }
@@ -68,8 +69,10 @@ namespace L05 {
                 drivingOrder.innerHTML+= ""+ drivePrice.toFixed(2)+"€";
                 order.appendChild(drivingOrder);
                 break;
+                default:
+                    break;
             }
-    
+            
         }
         }
 
@@ -82,6 +85,10 @@ namespace L05 {
     }
     // 
    
+function resetOrder(_event:Event): void{
+    let order:HTMLDivElement = <HTMLDivElement>document.querySelector("#order");
+        order.innerHTML="";
+}
 
 
 
@@ -93,10 +100,7 @@ namespace L05 {
 
 
 
-
-    export function displayOrder(): void {
-        console.log("displayOrder")
-    }
+    
   
 
 
