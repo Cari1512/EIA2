@@ -17,15 +17,6 @@ var L05;
         alert("Ihr Auftrag wurde abgeschickt");
     }
     // 
-    function deleteForm(_event) {
-        this.parentNode.remove();
-    }
-    L05.deleteForm = deleteForm;
-    ;
-    function deleteBox(_event) {
-        this.parentNode.remove();
-    }
-    L05.deleteBox = deleteBox;
     function displayOrder() {
         console.log("displayOrder");
     }

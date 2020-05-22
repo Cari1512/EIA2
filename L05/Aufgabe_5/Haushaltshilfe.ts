@@ -24,14 +24,7 @@ namespace L05 {
     // 
    
 
-export function deleteForm(this: any, _event:Event): void{
-    this.parentNode.remove();
-    
-        
-};
-export function deleteBox(this: any, _event:Event): void{
-    this.parentNode.remove();
-}
+
 
 
 
