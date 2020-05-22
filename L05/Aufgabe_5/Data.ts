@@ -2,7 +2,7 @@ namespace L05 {
 
     export let data: Data = {
         
-            product: [
+        product: [
             {name: "Apfel",unit:"kg", price:10},
             {name: "Brot",unit:"Laib",  price:10},
             {name: "Milch",unit:"Liter",  price:10},

@@ -4,15 +4,12 @@ body {
     grid-template-rows: auto auto;
    
 }
-#Task{
-    width: 100px;
-    border-radius: 5px;
-}
+
 header {
 	grid-column: 1/span 1;
 	text-align: center;
 }
-#Order{
+#order{
     grid-column: 2/span 1;
     text-align: center;
     border: 2px solid black;
@@ -35,14 +32,7 @@ header {
     margin: auto;
     padding-top: 20px;
 }
-.addArtikel{
-    width:  20px;
-    height: 20px;
-    margin: auto;
-    background-color: grey;
-    display: inline-block;
-    
-}
+
 .form{
     height: 200px;
     width: 300px;
@@ -53,10 +43,4 @@ header {
     grid-row: auto;
     border:2px solid black;
     padding: 20px;
-}
-#trashform{
-    
-    right: 10px;
-    bottom: 10px;
-
 }
