@@ -18,6 +18,7 @@ header {
 }
 #Send{
     border-radius: 5px;
+    width: 120px;
 }
 #Help{
     font-size: 40px
@@ -43,4 +44,9 @@ header {
     grid-row: auto;
     border:2px solid black;
     padding: 20px;
+}
+#reset{
+    grid-column: 2;
+    border-radius: 5px;
+    width: 120px;
 }

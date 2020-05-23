@@ -131,8 +131,9 @@ namespace L05 {
             option.value = item.name;
 
             group.appendChild(input);
-            group.appendChild(datalist);
             datalist.appendChild(option);
+            group.appendChild(datalist);
+            
 
         }
         return group;

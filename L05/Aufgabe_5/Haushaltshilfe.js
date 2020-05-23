@@ -2,13 +2,19 @@
 var L05;
 (function (L05) {
     window.addEventListener("load", handleLoad);
-    function handleLoad(_event) {
+    async function handleLoad(_event) {
+        let response = await fetch("Data05.json");
+        let offer = await response.text();
+        let data = JSON.parse(offer);
+        let answer = await fetch("Detail05.json");
+        let offers = await answer.text();
+        let detail = JSON.parse(offers);
         let Send = document.querySelector("button#Send");
         let Help = document.querySelector("#Help");
         let toOrder = document.querySelector("#toOrder");
         let reset = document.querySelector("#reset");
-        L05.generateContent(L05.data);
-        L05.generateDetail(L05.detail);
+        L05.generateContent(data);
+        L05.generateDetail(detail);
         Send.addEventListener("click", send);
         Help.addEventListener("click", help);
         toOrder.addEventListener("click", handleChange);
@@ -74,13 +80,21 @@ var L05;
     function help(_event) {
         alert("Wie funktioniert es: Um eine neue Erledigung hinzuzufügen klicken Sie auf den Button mit der Beschriftung:neue Erledigung. Um innerhalb einer Erledigung eine Aufgabe/ein Produkt hinzuzufügen bitte auf das Plus klicken. Füllen Sie alle aus Fächer aus. Um ein Produkt/Aufgabe zu löschen auf den kleinen Mülleimer drücken. Man kann auch eine ganze Erledigung löschen, indem man neben dem Plus auf dem Mülleimer drückt. Am Ende nicht vergessen auf Abschicken zu clicken!");
     }
-    function send(_event) {
-        alert("Ihr Auftrag wurde abgeschickt");
-    }
     // 
     function resetOrder(_event) {
         let order = document.querySelector("#order");
         order.innerHTML = "";
+    }
+    async function send(_event) {
+        let formData = new FormData(document.forms[0]);
+        for (let entry of formData) {
+            console.log(entry[1]);
+        }
+        //Query-String zusammenbauen 
+        let query = new URLSearchParams(formData);
+        //Fetch (suchen der HTML-Datei (Haushaltshilfe))
+        await fetch("Haushaltshilfe.html?" + query.toString());
+        alert("Ihr Auftrag wurde abgeschickt");
     }
 })(L05 || (L05 = {}));
 //# sourceMappingURL=Haushaltshilfe.js.map
