@@ -2,6 +2,7 @@
 var L06;
 (function (L06) {
     window.addEventListener("load", handleLoad);
+    let url = "Haushaltshilfe.html";
     async function handleLoad(_event) {
         let response = await fetch("Data05.json");
         let offer = await response.text();
@@ -93,8 +94,9 @@ var L06;
         //Query-String zusammenbauen 
         let query = new URLSearchParams(formData);
         //Fetch (suchen der HTML-Datei (Haushaltshilfe))
-        await fetch("Haushaltshilfe.html?" + query.toString());
-        alert("Ihr Auftrag wurde abgeschickt");
+        let response = await fetch(url + "?" + query.toString());
+        let responseText = await response.text();
+        alert(responseText);
     }
 })(L06 || (L06 = {}));
 //# sourceMappingURL=Haushaltshilfe.js.map

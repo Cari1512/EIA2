@@ -1,6 +1,6 @@
 namespace L06 {
     window.addEventListener("load", handleLoad);
-
+    let url:string = "Haushaltshilfe.html";
 
     async function handleLoad(_event: Event): Promise<void> {
         let response: Response = await fetch("Data05.json");
@@ -104,9 +104,10 @@ async function send(_event: Event): Promise<void> {
     //Query-String zusammenbauen 
     let query: URLSearchParams = new URLSearchParams(<any>formData);
     //Fetch (suchen der HTML-Datei (Haushaltshilfe))
-    await fetch("Haushaltshilfe.html?" + query.toString());
+    let response: Response = await fetch(url + "?" + query.toString());
+    let responseText: string = await response.text();
 
-    alert("Ihr Auftrag wurde abgeschickt");
+    alert(responseText);
 }
 
 
