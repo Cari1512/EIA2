@@ -1,0 +1,21 @@
+{
+  "name": "eia2",
+  "version": "1.0.0",
+  "description": "EIA2",
+  "main": "",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "start": "node L06/Server/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Cari1512/EIA2.git"
+  },
+  "author": "Carianne Sauermann",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Cari1512/EIA2/issues"
+  },
+  "homepage": "https://github.com/Cari1512/EIA2#readme"
+}

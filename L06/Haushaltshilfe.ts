@@ -1,13 +1,14 @@
 namespace L06 {
     window.addEventListener("load", handleLoad);
-    let url:string = "Haushaltshilfe.html";
+    //let url:string = "Haushaltshilfe.html";
+    let url:string = "http://localhost:5001";
 
     async function handleLoad(_event: Event): Promise<void> {
-        let response: Response = await fetch("Data05.json");
+        let response: Response = await fetch("Data06.json");
         let offer: string = await response.text();
         let data: Data = JSON.parse(offer);
 
-        let answer: Response = await fetch("Detail05.json");
+        let answer: Response = await fetch("Detail06.json");
         let offers: string = await answer.text();
         let detail: Detail = JSON.parse(offers);
 

@@ -2,12 +2,13 @@
 var L06;
 (function (L06) {
     window.addEventListener("load", handleLoad);
-    let url = "Haushaltshilfe.html";
+    //let url:string = "Haushaltshilfe.html";
+    let url = "http://localhost:5001";
     async function handleLoad(_event) {
-        let response = await fetch("Data05.json");
+        let response = await fetch("Data06.json");
         let offer = await response.text();
         let data = JSON.parse(offer);
-        let answer = await fetch("Detail05.json");
+        let answer = await fetch("Detail06.json");
         let offers = await answer.text();
         let detail = JSON.parse(offers);
         let Send = document.querySelector("button#Send");
