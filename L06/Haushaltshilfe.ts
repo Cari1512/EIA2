@@ -1,7 +1,7 @@
 namespace L06 {
     window.addEventListener("load", handleLoad);
     //let url:string = "Haushaltshilfe.html";
-    let url:string = "http://localhost:5001";
+    let url:string = "https://carianne.herokuapp.com/";
 
     async function handleLoad(_event: Event): Promise<void> {
         let response: Response = await fetch("Data06.json");
