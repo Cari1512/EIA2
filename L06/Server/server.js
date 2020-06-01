@@ -14,6 +14,8 @@ var L06_Haushaltshilfe;
     server.addListener("request", handleRequest);
     function handleRequest(_request, _response) {
         console.log("It works!!!");
+        _response.setHeader("content-type", "text/html; charset=utf-8");
+        _response.setHeader("Access-Control-Allow-Origin", "*");
         if (_request.url) {
             let url = URL.parse(_request.url, true);
             for (let key in url.query) {
@@ -22,8 +24,6 @@ var L06_Haushaltshilfe;
             let jsonString = JSON.stringify(url.query);
             _response.write(jsonString);
         }
-        _response.setHeader("content-type", "text/html; charset=utf-8");
-        _response.setHeader("Access-Control-Allow-Origin", "*");
         _response.write("This is my response");
         _response.end();
     }
