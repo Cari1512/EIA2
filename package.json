@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "description": "EIA2",
   "main": "",
-  "dependencies": {},
+  "dependencies": {
+    "@types/mongodb": "^3.5.20",
+    "mongodb": "^3.5.8"
+  },
   "devDependencies": {},
   "scripts": {
     "start": "node L06/Server/server.js"
