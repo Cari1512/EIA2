@@ -1,4 +1,4 @@
-namespace L06 {
+namespace L07 {
 
     export interface Item{
         name: string;

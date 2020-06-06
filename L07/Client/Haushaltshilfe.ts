@@ -1,14 +1,17 @@
-namespace L06 {
+namespace L07 {
     window.addEventListener("load", handleLoad);
     //let url:string = "Haushaltshilfe.html";
     let url:string = "https://carianne.herokuapp.com/";
+    let getOrderData: HTMLButtonElement = <HTMLButtonElement>document.getElementById("getOrderData"); 
+     
+    let orderData: HTMLDivElement = <HTMLDivElement>document.getElementById("order"); 
 
     async function handleLoad(_event: Event): Promise<void> {
-        let response: Response = await fetch("Data06.json");
+        let response: Response = await fetch("Data07.json");
         let offer: string = await response.text();
         let data: Data = JSON.parse(offer);
 
-        let answer: Response = await fetch("Detail06.json");
+        let answer: Response = await fetch("Detail07.json");
         let offers: string = await answer.text();
         let detail: Detail = JSON.parse(offers);
 
@@ -22,6 +25,7 @@ namespace L06 {
         Help.addEventListener("click", help);
         toOrder.addEventListener("click", handleChange);
         reset.addEventListener("click", resetOrder);
+        getOrderData.addEventListener("click", getData); 
 
 
     }
@@ -89,7 +93,34 @@ namespace L06 {
         alert("Wie funktioniert es: Um eine neue Erledigung hinzuzufügen klicken Sie auf den Button mit der Beschriftung:neue Erledigung. Um innerhalb einer Erledigung eine Aufgabe/ein Produkt hinzuzufügen bitte auf das Plus klicken. Füllen Sie alle aus Fächer aus. Um ein Produkt/Aufgabe zu löschen auf den kleinen Mülleimer drücken. Man kann auch eine ganze Erledigung löschen, indem man neben dem Plus auf dem Mülleimer drückt. Am Ende nicht vergessen auf Abschicken zu clicken!");
     }
    
-    // 
+    async function getData(_event: Event): Promise<void> {
+        let response: Response = await fetch(url + "?" + "getOrder=yes"); 
+        orderData.innerHTML = ""; 
+        let responseText: string = await response.text(); 
+        let pretty: string = responseText.replace(/\\|{|}|"|/g, ""); 
+        console.log(pretty);
+        for (let entry of pretty) {
+            switch(entry) {
+            case("_"):
+            orderData.innerHTML += "<br>" + "Bestell-ID: " + entry ; 
+            break;
+            case("["):
+            break; 
+            case("]"): 
+            break; 
+            case(","): 
+            orderData.innerHTML += "<br>"; 
+            break; 
+            case(":"):
+            orderData.innerHTML += entry + " "; 
+            break; 
+            default:
+            orderData.innerHTML += "" + entry ; 
+            break; 
+            }
+        }
+        console.log(responseText); 
+    }
    
 function resetOrder(_event:Event): void{
     let order:HTMLDivElement = <HTMLDivElement>document.querySelector("#order");

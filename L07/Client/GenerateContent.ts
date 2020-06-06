@@ -1,4 +1,4 @@
-namespace L06 {
+namespace L07 {
     export function generateContent(_data: Data): void {
         for (let category in _data) {
             let items: Item[] = _data[category];
