@@ -1,0 +1,28 @@
+{
+    "ort": [
+        {
+            "name": "Edeka"
+        },
+        {
+            "name": "Aldi"
+            
+        },
+        {
+            "name": "Lidl"
+            
+        },
+        {
+            "name": "Rewe"
+           
+        }
+    ],
+    "fahrt": [
+        {
+            "name": "Hin-und Rückfahrt"
+        },
+        {
+            "name": "eine Fahrt"
+            
+        }
+    ]
+}

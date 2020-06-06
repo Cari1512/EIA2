@@ -1,0 +1,70 @@
+{
+    "product": [
+        {
+            "name": "Brot",
+            "unit": "Laib",
+            "price": 1.50
+        },
+        {
+            "name": "Eier",
+            "unit": "Karton",
+            "price": 2.50
+        },
+        {
+            "name": "Milch",
+            "unit": "Liter",
+            "price": 0.8
+        },
+        {
+            "name": "Äpfel",
+            "unit": "1kg",
+            "price": 2.00
+        },
+        {
+            "name": "Nudeln",
+            "unit": "500g-Packung",
+            "price": 1.50
+        },
+        {
+            "name": "Zwiebeln",
+            "unit": "Stück",
+            "price": 0.80
+        }
+    ],
+    "driving": [
+        {
+            "name": "Supermarkt",
+            "unit": "km",
+            "price": 10
+        },
+        {
+            "name": "Krankenhaus",
+            "unit": "km",
+            "price": 10
+        },
+        {
+            "name": "Bekannte/Familie",
+            "unit": "km",
+            "price": 10
+        }
+    ],
+    "household": [
+        {
+            "name": "Putzen",
+            "unit": "1 Stunde",
+            "price": 10
+        },
+        {
+            "name": "Kochen",
+            "unit": "1 Stunde",
+            "price": 20
+        },
+        {
+            "name": "Gartenarbeit",
+            "unit": "1 Stunde",
+            "price": 15
+        }
+        
+    ]
+
+}

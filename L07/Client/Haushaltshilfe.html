@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Haushaltshilfe</title>
+
+    <script src="Interface.js" type="text/javascript" charset="utf-8"></script>
+    <script src="GenerateContent.js" type="text/javascript" charset="utf-8"></script>
+    <script src="Haushaltshilfe.js" type="text/javascript" charset="utf-8"></script>
+    <link rel="stylesheet" href="Haushaltshilfe.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+</head>
+<!-- ACHTUNG:Code Vorlage stammt von Alida. Dieser wurde mir auch von ihr erklärt und mit ihr zusammen geschrieben. Grund: Mein in L04 und L03 entstandenes Konzept sowie Code wurden unübersichtlich und hat bei mir für Verwirrung gesorgt. -->
+<body>
+    <header>
+        <h1>Haushaltshilfe</h1>
+
+
+        <form id="column1" method="GET">
+            <div>
+                <fieldset>
+                    <legend>Einkaufen</legend>
+                    <fieldset id="product">
+
+                    </fieldset>
+                    <fieldset id="ort">
+                    </fieldset>
+                </fieldset>
+                <fieldset>
+                    <legend>Haushalt</legend>
+                <fieldset id="household">
+                </fieldset>
+            </fieldset>
+                <fieldset>
+                    <legend>Fahrten</legend>
+                <fieldset id="driving">
+                </fieldset>
+                <fieldset id ="fahrt"></fieldset>
+            </fieldset>
+            <button id="toOrder" type="button">Zur Bestellung hinzufügen</button>
+            </div>
+        </form>
+    </header>
+    <i id="Help" class="far fa-question-circle"></i>
+    <div id="order">
+        
+
+        </div>
+        <span id="Total">Gesamtsumme:</span>
+        <button id="Send">Abschicken</button>
+        <button id="reset" type="reset" form="column1">Reset</button>
+    </div>
+
+</body>
+
+</html>
