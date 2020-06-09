@@ -22,7 +22,7 @@ namespace L07 {
                 fieldset.appendChild(group);
         }
     }
-
+ 
     export function generateDetail(_detail: Detail): void {
         for (let category in _detail) {
             let element: Element[] = _detail[category];

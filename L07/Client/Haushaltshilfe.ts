@@ -28,7 +28,7 @@ namespace L07 {
         toOrder.addEventListener("click", handleChange);
         reset.addEventListener("click", resetOrder);
         getOrderData.addEventListener("click", getData); 
-
+ 
 
     }
     function handleChange(_event:Event): void{

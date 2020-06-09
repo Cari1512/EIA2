@@ -63,7 +63,7 @@ input[type = number]{
 }
 #getOrderData{
     width: 200px;
-}
+} 
 fieldset, button{
     background-color: #C7C7BB;
 }
