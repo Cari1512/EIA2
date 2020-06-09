@@ -72,6 +72,8 @@ var L07;
         span.innerHTML = "Menge:";
         span.classList.add("amount" + _name);
         input.type = "number";
+        input.setAttribute("min", "0");
+        input.setAttribute("placeholder", "0");
         input.classList.add(_name);
         input.setAttribute("name", _name);
         let span2 = document.createElement("span");
@@ -103,11 +105,11 @@ var L07;
     function createDataList(_elements, _product) {
         let group = document.createElement("div");
         let input = document.createElement("input");
-        input.setAttribute("list", _product);
+        input.setAttribute("list", _product + "s");
         input.setAttribute("placeholder", "Welcher Supermarkt?");
         input.name = _product;
         let datalist = document.createElement("datalist");
-        datalist.id = _product;
+        datalist.id = _product + "s";
         for (let item of _elements) {
             let option = document.createElement("option");
             option.setAttribute("name", item.name);

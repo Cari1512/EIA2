@@ -27,6 +27,7 @@ var L07;
         getOrderData.addEventListener("click", getData);
     }
     function handleChange(_event) {
+        let i = 1;
         let formData = new FormData(document.forms[0]);
         let order = document.querySelector("#order");
         order.innerHTML = "";
@@ -50,22 +51,22 @@ var L07;
                     let einheit = String(item.getAttribute("unit"));
                     let markt = String(formData.get("ort"));
                     itemPrice = amount * itemPrice;
-                    productOrder.innerHTML += "" + entry[1];
-                    productOrder.innerHTML += "" + itemPrice.toFixed(2) + "€";
-                    productOrder.innerHTML += "" + amount;
-                    productOrder.innerHTML += "" + einheit;
-                    productOrder.innerHTML += "" + markt;
+                    productOrder.innerHTML += i + ".  " + entry[1];
+                    productOrder.innerHTML += "   " + itemPrice.toFixed(2) + "€";
+                    productOrder.innerHTML += "   " + amount;
+                    productOrder.innerHTML += " " + einheit;
+                    productOrder.innerHTML += "    " + markt;
                     productOrder.appendChild(br);
+                    i++;
                     order.appendChild(productOrder);
                     break;
                 case "household":
                     let taskPrice = Number(item.getAttribute("price"));
-                    let time = String(item.getAttribute("unit"));
-                    householdOrder.innerHTML += "" + entry[1];
-                    householdOrder.innerHTML += "" + taskPrice.toFixed(2) + "€";
-                    householdOrder.innerHTML += "" + time;
+                    householdOrder.innerHTML += i + ".  " + entry[1];
+                    householdOrder.innerHTML += "   " + taskPrice.toFixed(2) + "€";
                     householdOrder.appendChild(br);
                     order.appendChild(householdOrder);
+                    i++;
                     break;
                 case "driving":
                     let drivePrice = Number(item.getAttribute("price"));
@@ -73,10 +74,11 @@ var L07;
                     if (drive == "Hin-und Rückfahrt") {
                         drivePrice = drivePrice * 2;
                     }
-                    drivingOrder.innerHTML += "" + entry[1];
-                    drivingOrder.innerHTML += "" + drive;
-                    drivingOrder.innerHTML += "" + drivePrice.toFixed(2) + "€";
+                    drivingOrder.innerHTML += i + "." + entry[1];
+                    drivingOrder.innerHTML += "   " + drive;
+                    drivingOrder.innerHTML += "   " + drivePrice.toFixed(2) + "€";
                     order.appendChild(drivingOrder);
+                    i++;
                     break;
                 default:
                     break;

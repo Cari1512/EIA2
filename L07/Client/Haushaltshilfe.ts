@@ -32,6 +32,7 @@ namespace L07 {
 
     }
     function handleChange(_event:Event): void{
+        let i:number = 1;
         let formData: FormData = new FormData(document.forms[0]);
         let order:HTMLDivElement = <HTMLDivElement>document.querySelector("#order");
         order.innerHTML="";
@@ -55,22 +56,24 @@ namespace L07 {
                 let einheit: string = String(item.getAttribute("unit"));
                 let markt: string = String(formData.get("ort"));
                 itemPrice = amount * itemPrice;
-                productOrder.innerHTML+= "" + entry[1];
-                productOrder.innerHTML+= ""+itemPrice.toFixed(2)+"€";
-                productOrder.innerHTML+= ""+amount;
-                productOrder.innerHTML+= ""+einheit;
-                productOrder.innerHTML+= ""+markt;
+                productOrder.innerHTML+= i+".  " + entry[1];
+                productOrder.innerHTML+= "   "+itemPrice.toFixed(2)+"€";
+                productOrder.innerHTML+= "   "+amount;
+                productOrder.innerHTML+= " "+einheit;
+                productOrder.innerHTML+= "    "+markt;
                 productOrder.appendChild(br);
+                i++;
                 order.appendChild(productOrder);
                 break;
                 case"household":
                 let taskPrice: number =Number(item.getAttribute("price"));
-                let time: string = String(item.getAttribute("unit"));
-                householdOrder.innerHTML+= "" + entry[1];
-                householdOrder.innerHTML+= ""+taskPrice.toFixed(2)+"€";
-                householdOrder.innerHTML+= ""+time;
+               
+                householdOrder.innerHTML+= i+".  " + entry[1];
+                householdOrder.innerHTML+= "   "+taskPrice.toFixed(2)+"€";
+               
                 householdOrder.appendChild(br);
                 order.appendChild(householdOrder);
+                i++;
                 break;
                 case "driving":
                 let drivePrice: number =Number(item.getAttribute("price"));
@@ -78,10 +81,11 @@ namespace L07 {
                 if (drive== "Hin-und Rückfahrt"){
                     drivePrice= drivePrice*2;
                 }
-                drivingOrder.innerHTML+= ""+entry[1];
-                drivingOrder.innerHTML+= ""+drive;
-                drivingOrder.innerHTML+= ""+ drivePrice.toFixed(2)+"€";
+                drivingOrder.innerHTML+= i+"."+entry[1];
+                drivingOrder.innerHTML+= "   "+drive;
+                drivingOrder.innerHTML+= "   "+ drivePrice.toFixed(2)+"€";
                 order.appendChild(drivingOrder);
+                i++;
                 break;
                 default:
                     break;

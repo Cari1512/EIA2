@@ -83,6 +83,8 @@ namespace L07 {
         span.innerHTML = "Menge:"
         span.classList.add("amount" + _name);
         input.type= "number";
+        input.setAttribute("min", "0");
+        input.setAttribute("placeholder", "0");
         input.classList.add(_name);
         input.setAttribute("name",_name);
         let span2 = document.createElement("span");
@@ -120,11 +122,11 @@ namespace L07 {
     function createDataList(_elements: Element[], _product: string): HTMLElement | null {
         let group : HTMLDivElement = document.createElement("div");
         let input: HTMLInputElement = document.createElement("input");
-        input.setAttribute("list", _product);
+        input.setAttribute("list", _product + "s");
         input.setAttribute("placeholder", "Welcher Supermarkt?");
         input.name = _product;
         let datalist: HTMLDataListElement = document.createElement("datalist");
-        datalist.id = _product;
+        datalist.id = _product + "s";
         for (let item of _elements) {
             let option: HTMLOptionElement = document.createElement("option");
             option.setAttribute("name", item.name);
