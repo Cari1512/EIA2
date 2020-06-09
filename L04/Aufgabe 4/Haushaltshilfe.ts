@@ -7,7 +7,7 @@ namespace HomeHelp {
         let Send: HTMLButtonElement = <HTMLButtonElement>document.querySelector("button#Send");
         let Help: HTMLElement = <HTMLElement>document.querySelector("#Help");
 
-        newTask(Data);
+ //       newTask(Data);
         Send.addEventListener("click", send);
         Help.addEventListener("click", help)
 

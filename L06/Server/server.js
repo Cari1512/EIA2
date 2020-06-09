@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.L06_Haushaltshilfe = void 0;
 const Http = require("http");
 const URL = require("url");
 var L06_Haushaltshilfe;

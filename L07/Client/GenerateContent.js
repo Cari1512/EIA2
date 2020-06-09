@@ -1,6 +1,6 @@
 "use strict";
-var L06;
-(function (L06) {
+var L07;
+(function (L07) {
     function generateContent(_data) {
         for (let category in _data) {
             let items = _data[category];
@@ -23,7 +23,7 @@ var L06;
                 fieldset.appendChild(group);
         }
     }
-    L06.generateContent = generateContent;
+    L07.generateContent = generateContent;
     function generateDetail(_detail) {
         for (let category in _detail) {
             let element = _detail[category];
@@ -43,7 +43,7 @@ var L06;
                 fieldset.appendChild(group);
         }
     }
-    L06.generateDetail = generateDetail;
+    L07.generateDetail = generateDetail;
     function createMultiple(_item, _category) {
         let group = document.createElement("div");
         for (let item of _item) {
@@ -136,5 +136,5 @@ var L06;
         }
         return group;
     }
-})(L06 || (L06 = {}));
+})(L07 || (L07 = {}));
 //# sourceMappingURL=GenerateContent.js.map

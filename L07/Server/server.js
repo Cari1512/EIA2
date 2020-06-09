@@ -1,31 +1,73 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.L07 = void 0;
 const Http = require("http");
 const URL = require("url");
-var L06_Haushaltshilfe;
-(function (L06_Haushaltshilfe) {
-    let server = Http.createServer();
-    console.log(server);
+const Mongo = require("mongodb");
+var L07;
+(function (L07) {
+    //Vorlage durch Alida Kohler vom 3.6.2020, leider konnte ich keine Zeit finden mich diese Woche mit EIA zu beschäftigen, aber dies werde ich am Dienstag gemeinsam mit Alidas Hilfe nachholen; 
+    let orders;
     let port = process.env.PORT;
-    if (port == undefined)
+    if (port == undefined) {
         port = 5001;
-    console.log("Server starting on port:" + port);
-    server.listen(port);
-    server.addListener("request", handleRequest);
-    function handleRequest(_request, _response) {
+    }
+    let databaseUrl = "mongodb+srv://test:test@eia-yenva.mongodb.net/test?retryWrites=true&w=majority";
+    startServer(port);
+    connectToDatabase(databaseUrl);
+    function startServer(_port) {
+        let server = Http.createServer();
+        console.log(server);
+        console.log("Server starting on port:" + _port);
+        server.listen(_port);
+        server.addListener("request", handleRequest);
+    }
+    async function connectToDatabase(_url) {
+        let options = { useNewUrlParser: true, useUnifiedTopology: true };
+        let mongoClient = new Mongo.MongoClient(_url, options);
+        await mongoClient.connect();
+        orders = mongoClient.db("Household").collection("Orders");
+        console.log("Database connection ", orders != undefined);
+    }
+    async function handleRequest(_request, _response) {
         console.log("It works!!!");
         _response.setHeader("content-type", "text/html; charset=utf-8");
         _response.setHeader("Access-Control-Allow-Origin", "*");
         if (_request.url) {
             let url = URL.parse(_request.url, true);
-            for (let key in url.query) {
-                _response.write(key + ":" + url.query[key] + "<br/>");
+            if (_request.url == "/?getOrder=yes") {
+                console.log("THIS WORKS");
+                //showData(_response); 
+                let options = { useNewUrlParser: true, useUnifiedTopology: true };
+                let mongoClient = new Mongo.MongoClient(databaseUrl, options);
+                await mongoClient.connect();
+                let orders = mongoClient.db("Household").collection("Orders");
+                let cursor = await orders.find();
+                await cursor.forEach(showOrders);
+                let jsonString = JSON.stringify(allOrders);
+                let answer = jsonString.toString();
+                _response.write(answer);
+                allOrders = [];
             }
-            let jsonString = JSON.stringify(url.query);
-            _response.write(jsonString);
+            else {
+                let jsonString = JSON.stringify((url.query), null, 2);
+                _response.write(jsonString);
+                storeOrder(url.query);
+            }
         }
-        _response.write("This is my response");
         _response.end();
     }
-})(L06_Haushaltshilfe = exports.L06_Haushaltshilfe || (exports.L06_Haushaltshilfe = {}));
+    let allOrders = [];
+    function storeOrder(_order) {
+        orders.insert(_order);
+    }
+    function showOrders(_item) {
+        //for (let entry in _item) {
+        //JSON.stringify(entry);
+        let jsonString = JSON.stringify(_item);
+        allOrders.push(jsonString);
+        //console.log(entry); 
+        //}
+    }
+})(L07 = exports.L07 || (exports.L07 = {}));
 //# sourceMappingURL=server.js.map

@@ -1,26 +1,29 @@
 "use strict";
-var L06;
-(function (L06) {
+var L07;
+(function (L07) {
     window.addEventListener("load", handleLoad);
     //let url:string = "Haushaltshilfe.html";
     let url = "https://carianne.herokuapp.com/";
+    let getOrderData = document.getElementById("getOrderData");
+    let orderData = document.getElementById("order");
     async function handleLoad(_event) {
-        let response = await fetch("Data06.json");
+        let response = await fetch("Data07.json");
         let offer = await response.text();
         let data = JSON.parse(offer);
-        let answer = await fetch("Detail06.json");
+        let answer = await fetch("Detail07.json");
         let offers = await answer.text();
         let detail = JSON.parse(offers);
         let Send = document.querySelector("button#Send");
         let Help = document.querySelector("#Help");
         let toOrder = document.querySelector("#toOrder");
         let reset = document.querySelector("#reset");
-        L06.generateContent(data);
-        L06.generateDetail(detail);
+        L07.generateContent(data);
+        L07.generateDetail(detail);
         Send.addEventListener("click", send);
         Help.addEventListener("click", help);
         toOrder.addEventListener("click", handleChange);
         reset.addEventListener("click", resetOrder);
+        getOrderData.addEventListener("click", getData);
     }
     function handleChange(_event) {
         let formData = new FormData(document.forms[0]);
@@ -82,7 +85,34 @@ var L06;
     function help(_event) {
         alert("Wie funktioniert es: Um eine neue Erledigung hinzuzufügen klicken Sie auf den Button mit der Beschriftung:neue Erledigung. Um innerhalb einer Erledigung eine Aufgabe/ein Produkt hinzuzufügen bitte auf das Plus klicken. Füllen Sie alle aus Fächer aus. Um ein Produkt/Aufgabe zu löschen auf den kleinen Mülleimer drücken. Man kann auch eine ganze Erledigung löschen, indem man neben dem Plus auf dem Mülleimer drückt. Am Ende nicht vergessen auf Abschicken zu clicken!");
     }
-    // 
+    async function getData(_event) {
+        let response = await fetch(url + "?" + "getOrder=yes");
+        orderData.innerHTML = "";
+        let responseText = await response.text();
+        let pretty = responseText.replace(/\\|{|}|"|/g, "");
+        console.log(pretty);
+        for (let entry of pretty) {
+            switch (entry) {
+                case ("_"):
+                    orderData.innerHTML += "<br>" + "Bestell-ID: " + entry;
+                    break;
+                case ("["):
+                    break;
+                case ("]"):
+                    break;
+                case (","):
+                    orderData.innerHTML += "<br>";
+                    break;
+                case (":"):
+                    orderData.innerHTML += entry + " ";
+                    break;
+                default:
+                    orderData.innerHTML += "" + entry;
+                    break;
+            }
+        }
+        console.log(responseText);
+    }
     function resetOrder(_event) {
         let order = document.querySelector("#order");
         order.innerHTML = "";
@@ -99,5 +129,5 @@ var L06;
         let responseText = await response.text();
         alert(responseText);
     }
-})(L06 || (L06 = {}));
+})(L07 || (L07 = {}));
 //# sourceMappingURL=Haushaltshilfe.js.map

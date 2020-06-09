@@ -5,7 +5,7 @@ var HomeHelp;
     function handleLoad(_event) {
         let Send = document.querySelector("button#Send");
         let Help = document.querySelector("#Help");
-        HomeHelp.newTask(Data);
+        //       newTask(Data);
         Send.addEventListener("click", send);
         Help.addEventListener("click", help);
     }

@@ -1,7 +1,7 @@
 "use strict";
-var L06;
-(function (L06) {
-    L06.data = {
+var L07;
+(function (L07) {
+    L07.data = {
         product: [
             { name: "Apfel", unit: "kg", price: 10 },
             { name: "Brot", unit: "Laib", price: 10 },
@@ -21,7 +21,7 @@ var L06;
             { name: "Bekannte/Familie", unit: "km", price: 10 },
         ]
     };
-    L06.detail = {
+    L07.detail = {
         ort: [
             { name: "Edeka" },
             { name: "Aldi" },
@@ -33,5 +33,5 @@ var L06;
             { name: "eine Fahrt" },
         ]
     };
-})(L06 || (L06 = {}));
+})(L07 || (L07 = {}));
 //# sourceMappingURL=Data.js.map

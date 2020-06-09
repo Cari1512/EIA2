@@ -1,4 +1,4 @@
-namespace HomeHelp {
+/* namespace HomeHelp {
 
     
 
@@ -84,8 +84,8 @@ namespace HomeHelp {
 
 
     export function einkaufen(form:HTMLElement): void {
-        console.log("Einkauffunktion")
-        generateContent(Data);
+       // console.log("Einkauffunktion")
+       // generateContent(Data);
        // generateDetail(Data);
         // let what: HTMLInputElement = <HTMLInputElement>document.createElement("input");
         //         what.setAttribute("class", "Artikel");
@@ -208,13 +208,13 @@ namespace HomeHelp {
     export function generateContent(_data: Data): void{
        
         for (let category in _data.category) {
-            let items: Item[] = _data[category];
+  //          let items: Item[] = _data[category];
             
-            let group: HTMLElement | null = null; //es darf auch null sein
+   //         let group: HTMLElement | null = null; //es darf auch null sein
             switch (category) {
                 case "Einkaufen":
                     console.log(category);
-                    group = createSelect(items, category);
+  //                  group = createSelect(items, category);
                     break;
                 case "Haushalt":
                    // group = createSingle(items, category);
@@ -231,7 +231,7 @@ namespace HomeHelp {
 
 
 
-createSelect
+//createSelect
 
 
 
@@ -291,3 +291,4 @@ createSelect
 
 
 }
+ */
