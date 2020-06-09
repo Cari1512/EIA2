@@ -4,9 +4,11 @@ var L07;
     window.addEventListener("load", handleLoad);
     //let url:string = "Haushaltshilfe.html";
     let url = "https://carianne.herokuapp.com/";
-    let getOrderData = document.getElementById("getOrderData");
-    let orderData = document.getElementById("anfrage");
+    let getOrderData;
+    let orderData;
     async function handleLoad(_event) {
+        getOrderData = document.getElementById("getOrderData");
+        orderData = document.getElementById("anfrage");
         let response = await fetch("Data07.json");
         let offer = await response.text();
         let data = JSON.parse(offer);

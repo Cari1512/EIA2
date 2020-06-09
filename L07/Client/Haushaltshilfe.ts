@@ -2,11 +2,13 @@ namespace L07 {
     window.addEventListener("load", handleLoad);
     //let url:string = "Haushaltshilfe.html";
     let url:string = "https://carianne.herokuapp.com/";
-    let getOrderData: HTMLButtonElement = <HTMLButtonElement>document.getElementById("getOrderData"); 
+    let getOrderData: HTMLButtonElement; 
      
-    let orderData: HTMLDivElement = <HTMLDivElement>document.getElementById("anfrage"); 
+    let orderData: HTMLDivElement;
 
     async function handleLoad(_event: Event): Promise<void> {
+        getOrderData = <HTMLButtonElement>document.getElementById("getOrderData");
+        orderData  = <HTMLDivElement>document.getElementById("anfrage"); 
         let response: Response = await fetch("Data07.json");
         let offer: string = await response.text();
         let data: Data = JSON.parse(offer);
