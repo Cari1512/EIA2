@@ -17,7 +17,7 @@ export namespace L07 {
         port = 5001;
     }
 
-    let databaseUrl: string = "mongodb+srv://test:test@eia-yenva.mongodb.net/test?retryWrites=true&w=majority";
+    let databaseUrl: string = "mongodb+srv://test:test@eia2-wiehx.mongodb.net/<dbname>?retryWrites=true&w=majority";
 
     startServer(port);
     connectToDatabase(databaseUrl);

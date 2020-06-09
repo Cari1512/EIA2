@@ -12,7 +12,7 @@ var L07;
     if (port == undefined) {
         port = 5001;
     }
-    let databaseUrl = "mongodb+srv://test:test@eia-yenva.mongodb.net/test?retryWrites=true&w=majority";
+    let databaseUrl = "mongodb+srv://test:test@eia2-wiehx.mongodb.net/<dbname>?retryWrites=true&w=majority";
     startServer(port);
     connectToDatabase(databaseUrl);
     function startServer(_port) {
