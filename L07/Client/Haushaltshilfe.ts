@@ -4,7 +4,7 @@ namespace L07 {
     let url:string = "https://carianne.herokuapp.com/";
     let getOrderData: HTMLButtonElement = <HTMLButtonElement>document.getElementById("getOrderData"); 
      
-    let orderData: HTMLDivElement = <HTMLDivElement>document.getElementById("order"); 
+    let orderData: HTMLDivElement = <HTMLDivElement>document.getElementById("anfrage"); 
 
     async function handleLoad(_event: Event): Promise<void> {
         let response: Response = await fetch("Data07.json");

@@ -5,7 +5,7 @@ var L07;
     //let url:string = "Haushaltshilfe.html";
     let url = "https://carianne.herokuapp.com/";
     let getOrderData = document.getElementById("getOrderData");
-    let orderData = document.getElementById("order");
+    let orderData = document.getElementById("anfrage");
     async function handleLoad(_event) {
         let response = await fetch("Data07.json");
         let offer = await response.text();
