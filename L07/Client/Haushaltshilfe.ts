@@ -8,7 +8,7 @@ namespace L07 {
 
     async function handleLoad(_event: Event): Promise<void> {
         getOrderData = <HTMLButtonElement>document.getElementById("getOrderData");
-        orderData  = <HTMLDivElement>document.getElementById("anfrage"); 
+        
         let response: Response = await fetch("Data07.json");
         let offer: string = await response.text();
         let data: Data = JSON.parse(offer);
@@ -96,6 +96,7 @@ namespace L07 {
     }
    
     async function getData(_event: Event): Promise<void> {
+        orderData  = <HTMLDivElement>document.getElementById("anfrage"); 
         let response: Response = await fetch(url + "?" + "getOrder=yes"); 
         orderData.innerHTML = ""; 
         let responseText: string = await response.text(); 

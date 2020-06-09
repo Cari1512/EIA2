@@ -8,7 +8,6 @@ var L07;
     let orderData;
     async function handleLoad(_event) {
         getOrderData = document.getElementById("getOrderData");
-        orderData = document.getElementById("anfrage");
         let response = await fetch("Data07.json");
         let offer = await response.text();
         let data = JSON.parse(offer);
@@ -88,6 +87,7 @@ var L07;
         alert("Wie funktioniert es: Um eine neue Erledigung hinzuzufügen klicken Sie auf den Button mit der Beschriftung:neue Erledigung. Um innerhalb einer Erledigung eine Aufgabe/ein Produkt hinzuzufügen bitte auf das Plus klicken. Füllen Sie alle aus Fächer aus. Um ein Produkt/Aufgabe zu löschen auf den kleinen Mülleimer drücken. Man kann auch eine ganze Erledigung löschen, indem man neben dem Plus auf dem Mülleimer drückt. Am Ende nicht vergessen auf Abschicken zu clicken!");
     }
     async function getData(_event) {
+        orderData = document.getElementById("anfrage");
         let response = await fetch(url + "?" + "getOrder=yes");
         orderData.innerHTML = "";
         let responseText = await response.text();
