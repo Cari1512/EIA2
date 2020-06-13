@@ -19,6 +19,7 @@ namespace L08_Canvas {
         antibodies({x: 200, y: 450}, {x: 50, y: 50});
         particles({x: 200, y: 450}, {x: 375, y: 550});
         killerCell({x: 200, y: 450}, {x: 375, y: 550});
+        virus({x: 200, y: 450}, {x: 375, y: 550});
     }
 
     function drawBackground(): void {
@@ -88,7 +89,32 @@ namespace L08_Canvas {
         }
         crc2.restore();
     }
+    function virus(_position: Vector, _size: Vector): void{
+        
+        let r: number = 30;
+        let count: number = 4;
+        let particle: Path2D = new Path2D();
+        particle.arc(0, 0, r, 0, 2 * Math.PI);
 
+
+        crc2.save();
+        crc2.translate(_position.x, _position.y);
+        crc2.fillStyle = "grey";
+        
+        
+        
+
+        for (let drawn: number = 0; drawn < count; drawn++) {
+            crc2.save();
+            let x: number = (Math.random() - 0.5) * _size.x;
+            let y: number = - (Math.random() * _size.y);
+            crc2.translate(x, y);
+            crc2.fill(particle);
+            crc2.restore();
+        }
+        crc2.restore();
+    
+    }
     function antibodies(_position: Vector, _size: Vector): void {
         let particle: Path2D = new Path2D();
         let count: number = 3;
@@ -157,9 +183,13 @@ namespace L08_Canvas {
         let killerCell: Path2D = new Path2D();
        
         crc2.beginPath();
-        crc2.arc(20, 20, 20, 0, 2 * Math.PI);
-        crc2.closePath();
-        crc2.fillStyle = "grey";
+        killerCell.arc(20, 20, 20, 0, 2 * Math.PI);
+        killerCell.moveTo(30,30);
+        killerCell.lineTo(10,10);
+        killerCell.moveTo(30,10);
+        killerCell.lineTo(10,30);
+        killerCell.closePath();
+        crc2.fillStyle = "#aec8ce";
         crc2.fill();
         crc2.stroke();
         crc2.save();
