@@ -4,8 +4,6 @@ var L08_Canvas;
     //Teile by Luzia und Nelly
     let canvas = document.querySelector("canvas");
     let crc2 = canvas.getContext("2d");
-    // let width: number;
-    // let height: number;
     window.addEventListener("load", start);
     function start() {
         drawBackground();

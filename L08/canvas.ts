@@ -8,8 +8,7 @@ namespace L08_Canvas {
         x: number;
         y: number;
     }
-    // let width: number;
-    // let height: number;
+   
 
     window.addEventListener("load", start);
 
