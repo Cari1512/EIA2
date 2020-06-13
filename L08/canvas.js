@@ -1,19 +1,19 @@
 "use strict";
 var L08_Canvas;
 (function (L08_Canvas) {
-    //Teile by Luzia und Nelly
+    // Zeitnot in dieser Woche, daher etwas ungenaues auf Blatt geschriebenes Diagramm und nicht vollständiger Code. Teile by Luzia und Nelly
     let canvas = document.querySelector("canvas");
     let crc2 = canvas.getContext("2d");
     window.addEventListener("load", start);
     function start() {
-        drawBackground();
+        background();
         humanCells({ x: 150, y: 150 }, { x: 300, y: 130 });
         antibodies({ x: 200, y: 450 }, { x: 50, y: 50 });
         particles({ x: 200, y: 450 }, { x: 375, y: 550 });
         killerCell({ x: 200, y: 450 }, { x: 375, y: 550 });
         virus({ x: 200, y: 450 }, { x: 375, y: 550 });
     }
-    function drawBackground() {
+    function background() {
         //backgroundpattern
         let pattern = document.createElement('canvas').getContext('2d');
         pattern.canvas.width = 80;

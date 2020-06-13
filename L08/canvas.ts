@@ -1,6 +1,6 @@
 namespace L08_Canvas {
 
-    //Teile by Luzia und Nelly
+    // Zeitnot in dieser Woche, daher etwas ungenaues auf Blatt geschriebenes Diagramm und nicht vollständiger Code. Teile by Luzia und Nelly
     let canvas: HTMLCanvasElement = <HTMLCanvasElement>document.querySelector("canvas");
     let crc2: CanvasRenderingContext2D = <CanvasRenderingContext2D>canvas.getContext("2d")
 
@@ -13,7 +13,7 @@ namespace L08_Canvas {
     window.addEventListener("load", start);
 
     function start(): void {
-        drawBackground();
+        background();
         humanCells({x: 150, y: 150}, {x: 300, y: 130});
         antibodies({x: 200, y: 450}, {x: 50, y: 50});
         particles({x: 200, y: 450}, {x: 375, y: 550});
@@ -21,7 +21,7 @@ namespace L08_Canvas {
         virus({x: 200, y: 450}, {x: 375, y: 550});
     }
 
-    function drawBackground(): void {
+    function background(): void {
 
         
         //backgroundpattern
