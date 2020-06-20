@@ -14,8 +14,8 @@ namespace L08_Canvas {
 
     function start(): void {
         background();
-        humanCells({x: 150, y: 150}, {x: 300, y: 130});
-        antibodies({x: 200, y: 450}, {x: 50, y: 50});
+        humanCell({x: 150, y: 150}, {x: 300, y: 130});
+        antibody({x: 200, y: 450}, {x: 50, y: 50});
         particles({x: 200, y: 450}, {x: 375, y: 550});
         killerCell({x: 200, y: 450}, {x: 375, y: 550});
         virus({x: 200, y: 450}, {x: 375, y: 550});
@@ -60,7 +60,7 @@ namespace L08_Canvas {
 
 
     }
-    function humanCells(_position: Vector, _size: Vector): void{
+    function humanCell(_position: Vector, _size: Vector): void{
         let r1: number = 1;
         let r2: number = 30;
         let count: number = 4;
@@ -114,7 +114,7 @@ namespace L08_Canvas {
         crc2.restore();
     
     }
-    function antibodies(_position: Vector, _size: Vector): void {
+    function antibody(_position: Vector, _size: Vector): void {
         let particle: Path2D = new Path2D();
         let count: number = 3;
 

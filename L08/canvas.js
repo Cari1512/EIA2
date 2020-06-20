@@ -7,8 +7,8 @@ var L08_Canvas;
     window.addEventListener("load", start);
     function start() {
         background();
-        humanCells({ x: 150, y: 150 }, { x: 300, y: 130 });
-        antibodies({ x: 200, y: 450 }, { x: 50, y: 50 });
+        humanCell({ x: 150, y: 150 }, { x: 300, y: 130 });
+        antibody({ x: 200, y: 450 }, { x: 50, y: 50 });
         particles({ x: 200, y: 450 }, { x: 375, y: 550 });
         killerCell({ x: 200, y: 450 }, { x: 375, y: 550 });
         virus({ x: 200, y: 450 }, { x: 375, y: 550 });
@@ -41,7 +41,7 @@ var L08_Canvas;
         crc2.fillStyle = crc2.createPattern(pattern.canvas, "repeat");
         crc2.fillRect(0, 0, canvas.width, canvas.height);
     }
-    function humanCells(_position, _size) {
+    function humanCell(_position, _size) {
         let r1 = 1;
         let r2 = 30;
         let count = 4;
@@ -82,7 +82,7 @@ var L08_Canvas;
         }
         crc2.restore();
     }
-    function antibodies(_position, _size) {
+    function antibody(_position, _size) {
         let particle = new Path2D();
         let count = 3;
         crc2.save();
