@@ -47,7 +47,7 @@ var L09_classes;
     function update() {
         L09_classes.crc2.fillRect(0, 0, L09_classes.crc2.canvas.width, L09_classes.crc2.canvas.height);
         for (let virus of viruses) {
-            virus.move(1 / 180);
+            virus.move(1 / 50);
             virus.draw();
         }
         for (let particle of particles) {

@@ -69,7 +69,7 @@ namespace L09_classes {
     function update(){
        crc2.fillRect(0,0, crc2.canvas.width, crc2.canvas.height);
        for (let virus of viruses) {
-        virus.move(1 / 180);
+        virus.move(1 / 50);
         virus.draw();
     }
     for (let particle of particles) {
