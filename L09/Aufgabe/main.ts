@@ -22,7 +22,7 @@ namespace L09_classes {
 
         humanCell({x: 150, y: 150}, {x: 300, y: 130});
         // antibody({x: 200, y: 450}, {x: 50, y: 50});
-        createParticle(200);
+        createParticle(20);
         // killerCell({x: 200, y: 450}, {x: 375, y: 550});
         createvirus(10);
     }
