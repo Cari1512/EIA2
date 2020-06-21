@@ -1,7 +1,7 @@
 "use strict";
 var L09_classes;
 (function (L09_classes) {
-    class Virus {
+    class Particle {
         // _position: Vector
         constructor(_size) {
             // if (_position)
@@ -9,7 +9,7 @@ var L09_classes;
             // else
             this.position = new L09_classes.Vector(0, 0);
             this.velocity = new L09_classes.Vector(0, 0);
-            this.velocity.random(50, 100);
+            this.velocity.set(50, 100);
             this.size = _size;
         }
         move(_timeslice) {
@@ -26,14 +26,17 @@ var L09_classes;
                 this.position.y = L09_classes.crc2.canvas.height;
         }
         draw() {
-            let r = 30;
-            let count = 4;
+            let r1 = 1;
+            let r2 = 5;
+            let count = 100;
             let particle = new Path2D();
-            particle.arc(0, 0, r, 0, 2 * Math.PI);
+            let gradient = L09_classes.crc2.createRadialGradient(0, 0, r1, 0, 0, r2);
+            particle.arc(0, 0, r2, 0, 2 * Math.PI);
+            gradient.addColorStop(0, "#fff5ee");
+            gradient.addColorStop(0.5, "#faebd7");
+            gradient.addColorStop(0.9, "#faebd7");
             L09_classes.crc2.save();
-            L09_classes.crc2.translate(this.position.x, this.position.y);
-            L09_classes.crc2.scale(this.size, this.size);
-            L09_classes.crc2.fillStyle = "grey";
+            L09_classes.crc2.fillStyle = gradient;
             for (let drawn = 0; drawn < count; drawn++) {
                 L09_classes.crc2.save();
                 //  let x: number = (Math.random() - 0.5) * _size.x;
@@ -45,6 +48,6 @@ var L09_classes;
             L09_classes.crc2.restore();
         }
     }
-    L09_classes.Virus = Virus;
+    L09_classes.Particle = Particle;
 })(L09_classes || (L09_classes = {}));
-//# sourceMappingURL=Virus.js.map
+//# sourceMappingURL=Particle.js.map
