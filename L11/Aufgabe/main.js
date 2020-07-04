@@ -124,10 +124,10 @@ var L11;
         for (let i = 0; i < nParticle; i++) {
             x = (Math.random() * canvas.width);
             y = (Math.random() * canvas.height);
-            let position = new L11.Vector(x, y);
-            let particle = new L11.Particle(position);
-            particle.draw;
-            cell.push(particle);
+            // let position: Vector = new Vector(x, y);
+            // let particle: Particle = new Particle(position);
+            // particle.draw;
+            // cell.push(particle);
         }
         L11.crc2.restore();
     }

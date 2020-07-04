@@ -1,20 +1,19 @@
 namespace L11 {
-    export class Particle extends Cell {
-        //position: Vector;
+    export class Particle {
+        position: Vector;
         velocity: Vector;
         size: number;
         // _position: Vector
-        constructor(_position: Vector) {
+        constructor(_size: number) {
             // if (_position)
             //     this.position = _position;
             // else
-            super(_position);
             this.position = new Vector(0, 0);
 
             this.velocity = new Vector(0, 0);
             this.velocity.set(50, 100);
 
-            //this.size = _size;
+            this.size = _size;
         }
 
         move(_timeslice: number): void {

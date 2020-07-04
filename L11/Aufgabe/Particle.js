@@ -1,17 +1,16 @@
 "use strict";
 var L11;
 (function (L11) {
-    class Particle extends L11.Cell {
+    class Particle {
         // _position: Vector
-        constructor(_position) {
+        constructor(_size) {
             // if (_position)
             //     this.position = _position;
             // else
-            super(_position);
             this.position = new L11.Vector(0, 0);
             this.velocity = new L11.Vector(0, 0);
             this.velocity.set(50, 100);
-            //this.size = _size;
+            this.size = _size;
         }
         move(_timeslice) {
             let offset = new L11.Vector(this.velocity.x, this.velocity.y);

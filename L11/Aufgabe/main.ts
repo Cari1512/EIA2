@@ -166,10 +166,10 @@ namespace L11 {
                 x = (Math.random() * canvas.width);
                 y = (Math.random() * canvas.height);
     
-                let position: Vector = new Vector(x, y);
-                let particle: Particle = new Particle(position);
-                particle.draw;
-                cell.push(particle);
+                // let position: Vector = new Vector(x, y);
+                // let particle: Particle = new Particle(position);
+                // particle.draw;
+                // cell.push(particle);
             }
             crc2.restore();
         }
