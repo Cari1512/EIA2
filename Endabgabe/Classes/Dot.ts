@@ -6,8 +6,10 @@ namespace Endabgabe {
         public draw(): void {
             crc2.beginPath();
             crc2.moveTo(this.position.x, this.position.y);
-            crc2.arc(this.position.x, this.position.y, 3, 0, 2 * Math.PI);
+            crc2.arc(0, 0, 3, 0, 2 * Math.PI);
             crc2.stroke();
+            crc2.strokeStyle = "#FF0000";
+            crc2.closePath();
            
             
             
