@@ -2,6 +2,7 @@ namespace Endabgabe {
     export let crc2: CanvasRenderingContext2D;
     export let canvas: HTMLCanvasElement;
     export let objects: Object[] = [];
+    let dots: Dot[] = [];
     let positions: Vector[] = [];
   
     let modeActive: boolean = false;
@@ -52,11 +53,20 @@ namespace Endabgabe {
             positions.push(Vec);
 
             let dot: Dot = new Dot(Vec, Zero)
-            objects.push(dot);
+            dots.push(dot);
             
-            dot.draw();
-            
-            console.log(objects);
+            // dot.draw();
+            for (let i: number = 0; i < dots.length; i++) {
+                dots[i].draw();
+            }
+            console.log(dots);
+
+            if(dots.length >1){
+                dots=[];
+                let line:Line = new Line(positions[0], positions[1])
+                objects.push(line);
+                positions = [];
+            }
         }
     }
 

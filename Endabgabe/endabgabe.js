@@ -2,6 +2,7 @@
 var Endabgabe;
 (function (Endabgabe) {
     Endabgabe.objects = [];
+    let dots = [];
     let positions = [];
     let modeActive = false;
     let buttons = document.querySelectorAll("button");
@@ -34,9 +35,18 @@ var Endabgabe;
             let Zero = new Endabgabe.Vector(0, 0);
             positions.push(Vec);
             let dot = new Endabgabe.Dot(Vec, Zero);
-            Endabgabe.objects.push(dot);
-            dot.draw();
-            console.log(Endabgabe.objects);
+            dots.push(dot);
+            // dot.draw();
+            for (let i = 0; i < dots.length; i++) {
+                dots[i].draw();
+            }
+            console.log(dots);
+            if (dots.length > 1) {
+                dots = [];
+                let line = new Endabgabe.Line(positions[0], positions[1]);
+                Endabgabe.objects.push(line);
+                positions = [];
+            }
         }
     }
 })(Endabgabe || (Endabgabe = {}));

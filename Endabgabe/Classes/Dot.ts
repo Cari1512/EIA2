@@ -8,6 +8,7 @@ namespace Endabgabe {
             crc2.moveTo(this.position.x, this.position.y);
             crc2.arc(this.position.x, this.position.y, 3, 0, 2 * Math.PI);
             crc2.stroke();
+           
             
             
         }

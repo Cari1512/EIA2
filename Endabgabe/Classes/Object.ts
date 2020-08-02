@@ -17,14 +17,12 @@ namespace Endabgabe{
             
          
         }
-        public draw(): void {
-            
-        }
+        abstract draw(): void;
 
-        public move(_timeslice: number): void {
+        public move(): void {
 
             let offset: Vector = this.velocity.copy();
-            offset.scale(_timeslice);
+            offset.scale(3);
             this.position.add(offset);
 
     }

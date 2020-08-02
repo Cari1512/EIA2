@@ -7,11 +7,9 @@ var Endabgabe;
             this.position = _position.copy();
             this.positionB = _positionB.copy();
         }
-        draw() {
-        }
-        move(_timeslice) {
+        move() {
             let offset = this.velocity.copy();
-            offset.scale(_timeslice);
+            offset.scale(3);
             this.position.add(offset);
         }
     }
