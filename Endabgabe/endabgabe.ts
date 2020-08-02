@@ -5,7 +5,6 @@ namespace Endabgabe {
     let dots: Dot[] = [];
     let positions: Vector[] = [];
     let mode: string;
-    
     let modeActive: boolean = false;
     let buttons: NodeListOf<HTMLButtonElement> = document.querySelectorAll("button");
     window.addEventListener("load", handleLoad);
@@ -31,6 +30,7 @@ namespace Endabgabe {
     function objectMode(_mode: string): void {
         let chosenObject: HTMLButtonElement = <HTMLButtonElement>document.getElementById(_mode);
         modeActive = true
+        mode= _mode;
         console.log(modeActive, _mode);
 
 
@@ -64,7 +64,7 @@ namespace Endabgabe {
             if(dots.length >1){
                 switch (mode) {
 
-                    case "Line": {
+                    case "lineObject": {
                         console.log("Mode: Line");
                         dots = [];
                         drawLine();
@@ -84,21 +84,21 @@ namespace Endabgabe {
         let line: Line = new Line(positions[0], positions[1])
         objects.push(line);
         console.log("drawLine with coordinates:", positions);
-        drawObjects()
+        line.draw();
     }
 
 
-    function drawObjects(): void {
+    // function drawObjects(): void {
         
-        crc2.clearRect(0, 0, 1280, 620);
+    //     crc2.clearRect(0, 0, 1280, 620);
 
         
-        for (let i: number = 0; i < objects.length; i++) {
-            objects[i].draw();
-        }
+    //     for (let i: number = 0; i < objects.length; i++) {
+    //         objects[i].draw();
+    //     }
         
-        positions = [];
-    }
+    //     positions = [];
+    // }
 
 
 

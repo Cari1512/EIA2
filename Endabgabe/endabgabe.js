@@ -22,6 +22,7 @@ var Endabgabe;
     function objectMode(_mode) {
         let chosenObject = document.getElementById(_mode);
         modeActive = true;
+        mode = _mode;
         console.log(modeActive, _mode);
         for (let i = 0; i < buttons.length; i++) {
             buttons[i].classList.remove("active");
@@ -42,7 +43,7 @@ var Endabgabe;
             drawDots();
             if (dots.length > 1) {
                 switch (mode) {
-                    case "Line": {
+                    case "lineObject": {
                         console.log("Mode: Line");
                         dots = [];
                         drawLine();
@@ -62,14 +63,14 @@ var Endabgabe;
         let line = new Endabgabe.Line(positions[0], positions[1]);
         Endabgabe.objects.push(line);
         console.log("drawLine with coordinates:", positions);
-        drawObjects();
+        line.draw();
     }
-    function drawObjects() {
-        Endabgabe.crc2.clearRect(0, 0, 1280, 620);
-        for (let i = 0; i < Endabgabe.objects.length; i++) {
-            Endabgabe.objects[i].draw();
-        }
-        positions = [];
-    }
+    // function drawObjects(): void {
+    //     crc2.clearRect(0, 0, 1280, 620);
+    //     for (let i: number = 0; i < objects.length; i++) {
+    //         objects[i].draw();
+    //     }
+    //     positions = [];
+    // }
 })(Endabgabe || (Endabgabe = {}));
 //# sourceMappingURL=endabgabe.js.map
