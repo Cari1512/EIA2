@@ -4,6 +4,7 @@ var Endabgabe;
     Endabgabe.objects = [];
     let dots = [];
     let positions = [];
+    let mode;
     let modeActive = false;
     let buttons = document.querySelectorAll("button");
     window.addEventListener("load", handleLoad);
@@ -28,6 +29,8 @@ var Endabgabe;
         chosenObject.classList.add("active");
     }
     function handleClick(_event) {
+        // let clear: boolean;
+        // clear = true;
         if (modeActive) {
             let x = _event.clientX;
             let y = _event.clientY;
@@ -36,18 +39,37 @@ var Endabgabe;
             positions.push(Vec);
             let dot = new Endabgabe.Dot(Vec, Zero);
             dots.push(dot);
-            // dot.draw();
-            for (let i = 0; i < dots.length; i++) {
-                dots[i].draw();
-            }
-            console.log(dots);
+            drawDots();
             if (dots.length > 1) {
-                dots = [];
-                let line = new Endabgabe.Line(positions[0], positions[1]);
-                Endabgabe.objects.push(line);
-                positions = [];
+                switch (mode) {
+                    case "Line": {
+                        console.log("Mode: Line");
+                        dots = [];
+                        drawLine();
+                        break;
+                    }
+                }
             }
         }
+    }
+    function drawDots() {
+        for (let i = 0; i < dots.length; i++) {
+            dots[i].draw();
+            console.log(dots);
+        }
+    }
+    function drawLine() {
+        let line = new Endabgabe.Line(positions[0], positions[1]);
+        Endabgabe.objects.push(line);
+        console.log("drawLine with coordinates:", positions);
+        drawObjects();
+    }
+    function drawObjects() {
+        Endabgabe.crc2.clearRect(0, 0, 1280, 620);
+        for (let i = 0; i < Endabgabe.objects.length; i++) {
+            Endabgabe.objects[i].draw();
+        }
+        positions = [];
     }
 })(Endabgabe || (Endabgabe = {}));
 //# sourceMappingURL=endabgabe.js.map

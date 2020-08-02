@@ -4,7 +4,8 @@ namespace Endabgabe {
     export let objects: Object[] = [];
     let dots: Dot[] = [];
     let positions: Vector[] = [];
-  
+    let mode: string;
+    
     let modeActive: boolean = false;
     let buttons: NodeListOf<HTMLButtonElement> = document.querySelectorAll("button");
     window.addEventListener("load", handleLoad);
@@ -41,7 +42,8 @@ namespace Endabgabe {
     }
 
     function handleClick(_event: MouseEvent): void {
-
+        // let clear: boolean;
+        // clear = true;
 
         if (modeActive) {
             let x: number = _event.clientX;
@@ -55,22 +57,48 @@ namespace Endabgabe {
             let dot: Dot = new Dot(Vec, Zero)
             dots.push(dot);
             
-            // dot.draw();
-            for (let i: number = 0; i < dots.length; i++) {
-                dots[i].draw();
-            }
-            console.log(dots);
+            drawDots();
+
+            
 
             if(dots.length >1){
-                dots=[];
-                let line:Line = new Line(positions[0], positions[1])
-                objects.push(line);
-                positions = [];
+                switch (mode) {
+
+                    case "Line": {
+                        console.log("Mode: Line");
+                        dots = [];
+                        drawLine();
+                        break;
+                    }
             }
         }
     }
+    }
+    function drawDots(): void {
+        for (let i: number = 0; i < dots.length; i++) {
+            dots[i].draw();
+            console.log(dots);
+        }
+    }
+    function drawLine(): void {
+        let line: Line = new Line(positions[0], positions[1])
+        objects.push(line);
+        console.log("drawLine with coordinates:", positions);
+        drawObjects()
+    }
 
 
+    function drawObjects(): void {
+        
+        crc2.clearRect(0, 0, 1280, 620);
+
+        
+        for (let i: number = 0; i < objects.length; i++) {
+            objects[i].draw();
+        }
+        
+        positions = [];
+    }
 
 
 
