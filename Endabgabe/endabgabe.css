@@ -1,0 +1,103 @@
+body{
+    margin : 0;
+    display: grid;
+    grid-template-columns: 20% 60% 20%;
+    grid-template-rows: 10% auto 20%;
+    grid-template-areas: 
+        "title project canvaslabel"
+        "sidebar canvas sidebar2"
+        "sidebar3 sidebar3 sidebar3";
+}
+#drawingSpace{
+    grid-area: title;
+    margin: 10%;
+}
+/* #canvas1{
+    grid-area: canvas;
+    background-color: black;
+    width: 60%;
+    margin-left: 20%;
+}
+#canvas2{
+    grid-area: canvas;
+    background-color: green;
+    width: 80%;
+    margin-left: 10%;
+} */
+canvas{
+    grid-area: canvas;
+    background-color: wheat;
+    width: 100%;
+}
+#projectName{
+    grid-area: project;
+    margin-top: 3%;
+}
+#load{
+    grid-area: project;
+    width: 20%;
+    margin-left: 40%;
+    height: 30%;
+}
+#name{
+    grid-area: project;
+    width: 20%;
+    margin-left: 40%;
+    height:30%;
+    top: 20%
+}
+#objects{
+    grid-area: sidebar;
+    margin : 10%;
+    background-color: thistle;
+}
+#objects > button{
+    width: 30%;
+    height: 10%;
+    margin-top: 2%;
+    margin-left: 35%;
+    margin-bottom: 8%;
+}
+#textObject{
+    width: 90%;
+    margin-left: 5%;
+}
+#figure{
+    grid-area: sidebar3;
+    background-color: thistle;
+    margin : 1%;
+    margin-left: 20%;
+    width: 60%;
+    height: 50%;
+}
+
+#figure > button{
+    grid-area: sidebar3;
+    width: 12%;
+    height: 50%;
+    margin-top: 2%;
+    margin-bottom: 8%;
+}
+#rangeLabel > input{
+    width: 15%;
+}
+
+#project{
+    grid-area: sidebar2;
+    margin:10%;
+    background-color: thistle;
+    
+}
+
+#sizeSpan> label{
+    display: block;
+    margin-left: 10%;
+}
+#project> button{
+    display: block;
+    margin-left: 25%;
+}
+
+.active {
+	background-color: dimgrey;
+}

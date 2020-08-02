@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Endabgabe</title>
+    <link rel="stylesheet" href="endabgabe.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <script src="Classes/Object.js"></script>
+    <script src="Classes/Vector.js"></script>
+    <script src="Classes/Dot.js"></script>
+    <script src="endabgabe.js"></script>
+    <script src="Classes/Line.js"></script>
+
+</head>
+
+<body>
+    <h1 id="drawingSpace"> drawing space</h1>
+    <div id="projectName">
+        <input placeholder="project name:" id="name"></input>
+        <select name="load" id="load" list="loadPicture"></select>
+        <datalist id="loadPicture"></datalist>
+    </div>
+    <canvas></canvas>
+    <!-- <canvas id="canvas2"></canvas>
+    <canvas id="canvas1"></canvas> -->
+
+    <div id="objects">
+        <button id="lineObject" type=button class="fas fa-minus"></button>
+        <button id="triangleObject" type=button class="fas fa-caret-up"></button>
+        <button id="squareObject" type=button class="fas fa-square"></button>
+        <button id="circleObject" type=button class="fas fa-circle"></button>
+        <button id="arcObject" type=button>(</button>
+        <!-- <input id="textObject" placeholder="your text"></input> -->
+    </div>
+
+    <div id="figure">
+
+        <button id="colorFigure" type=button>color</button>
+        <button id="rotateFigure" type=button>rotate</button>
+        <span id="rangeLabel">
+            <label for="rangeLabel">size</label>
+        <input type=range name=sizeFigure max="1.0" min="0.1" step="0.1"></input>
+    </span>
+        <button id="deleteFigure" type=button>delete</button>
+        <button id="lightButton" type=button>B</button>
+        <!-- <label for="lightButton">LIGHT BUTTON</label> -->
+        <button id="moveButton" type=button>R</button>
+        
+        <!-- <label for ="moveButton">DO NOT PRESS <br>THE RED BUTTON</label> -->
+        
+    </div>
+
+    <div id="project">
+        <button id="colorProject" type=button>color</button>
+        <span id="sizeSpan">
+            <label for="sizeSpan">size</label>
+            <input type="radio" id="size1" name="sizeProject"></input>
+            <label for="size1">1</label>
+            <input type="radio" id="size2" name="sizeProject"></input>
+            <label for="size2">2</label>
+            <input type="radio" id="size3" name="sizeProject"></input>
+            <label for="size3">3</label>
+        </span>
+        <select name="pattern" id="pattern" list="pattern"></select>
+        <datalist id="pattern"></datalist>
+        <button id="deleteProject" type=button>delete</button>
+        <button id="saveProject" type=button>save</button>
+
+    </div>
+
+</body>
+
+</html>
