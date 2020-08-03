@@ -12,18 +12,7 @@ body{
     grid-area: title;
     margin: 10%;
 }
-/* #canvas1{
-    grid-area: canvas;
-    background-color: black;
-    width: 60%;
-    margin-left: 20%;
-}
-#canvas2{
-    grid-area: canvas;
-    background-color: green;
-    width: 80%;
-    margin-left: 10%;
-} */
+
 canvas{
     grid-area: canvas;
     background-color: wheat;

@@ -6,6 +6,7 @@ namespace Endabgabe {
     let positions: Vector[] = [];
     let mode: string;
     let modeActive: boolean = false;
+    let canvasColor: HTMLInputElement = <HTMLInputElement>document.getElementById("colorPickerCanvas");
     let buttons: NodeListOf<HTMLButtonElement> = document.querySelectorAll("button");
     window.addEventListener("load", handleLoad);
 
@@ -19,14 +20,18 @@ namespace Endabgabe {
         // let Square : HTMLButtonElement = <HTMLButtonElement>document.getElementById("squareObject");
         // let Circle : HTMLButtonElement = <HTMLButtonElement>document.getElementById("circleObject");
         // let Arc : HTMLButtonElement = <HTMLButtonElement>document.getElementById("arcObject");
-
+        
 
 
 
         Line.addEventListener("click", function () { objectMode("lineObject") })
         canvas.addEventListener("click", handleClick)
+        canvasColor.addEventListener("change", colorProject)
     }
-
+    function colorProject(): void {
+        canvas.style.backgroundColor =canvasColor.value;
+        console.log(canvasColor.value);
+    }
     function objectMode(_mode: string): void {
         let chosenObject: HTMLButtonElement = <HTMLButtonElement>document.getElementById(_mode);
         modeActive = true
