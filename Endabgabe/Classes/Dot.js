@@ -12,6 +12,7 @@ var Endabgabe;
             Endabgabe.crc2.stroke();
             Endabgabe.crc2.strokeStyle = "#FF0000";
             Endabgabe.crc2.fillStyle = "red";
+            Endabgabe.crc2.lineWidth = 5;
             Endabgabe.crc2.fill;
             Endabgabe.crc2.closePath();
             console.log(this.position, this.positionB);
