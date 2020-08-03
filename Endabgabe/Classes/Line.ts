@@ -16,6 +16,8 @@ namespace Endabgabe {
             crc2.moveTo(this.positionB.x, this.positionB.y);
             crc2.arc(this.positionB.x, this.positionB.y, 3, 0, 2 * Math.PI);
             crc2.stroke();
+            crc2.lineWidth = 5;
+            crc2.strokeStyle = "#FF0000"
         }
 
     }
