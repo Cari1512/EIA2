@@ -12,6 +12,7 @@ var Endabgabe;
     function handleLoad() {
         Endabgabe.canvas = document.querySelector("canvas");
         Endabgabe.crc2 = Endabgabe.canvas.getContext("2d");
+        canvasColor = document.getElementById("colorPickerCanvas");
         let Line = document.getElementById("lineObject");
         // let Triangle : HTMLButtonElement = <HTMLButtonElement>document.getElementById("triangleObject");
         // let Square : HTMLButtonElement = <HTMLButtonElement>document.getElementById("squareObject");

@@ -6,7 +6,7 @@ namespace Endabgabe {
     let positions: Vector[] = [];
     let mode: string;
     let modeActive: boolean = false;
-    let canvasColor: HTMLInputElement = <HTMLInputElement>document.getElementById("colorPickerCanvas");
+    let canvasColor: HTMLInputElement= <HTMLInputElement>document.getElementById("colorPickerCanvas");
     let buttons: NodeListOf<HTMLButtonElement> = document.querySelectorAll("button");
     window.addEventListener("load", handleLoad);
 
@@ -14,7 +14,7 @@ namespace Endabgabe {
     function handleLoad(): void {
         canvas = <HTMLCanvasElement>document.querySelector("canvas");
         crc2 = <CanvasRenderingContext2D>canvas.getContext("2d");
-
+        canvasColor = <HTMLInputElement>document.getElementById("colorPickerCanvas");
         let Line: HTMLButtonElement = <HTMLButtonElement>document.getElementById("lineObject");
         // let Triangle : HTMLButtonElement = <HTMLButtonElement>document.getElementById("triangleObject");
         // let Square : HTMLButtonElement = <HTMLButtonElement>document.getElementById("squareObject");
