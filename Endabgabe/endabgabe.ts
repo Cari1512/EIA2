@@ -85,6 +85,7 @@ namespace Endabgabe {
         objects.push(line);
         console.log("drawLine with coordinates:", positions);
         line.draw();
+         positions = [];
     }
 
 

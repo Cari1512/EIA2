@@ -64,6 +64,7 @@ var Endabgabe;
         Endabgabe.objects.push(line);
         console.log("drawLine with coordinates:", positions);
         line.draw();
+        positions = [];
     }
     // function drawObjects(): void {
     //     crc2.clearRect(0, 0, 1280, 620);
