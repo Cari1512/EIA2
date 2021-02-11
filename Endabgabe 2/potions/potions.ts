@@ -3,9 +3,9 @@ namespace Potions {
     let label: HTMLSpanElement;
 
     async function createElements(): Promise<void> {
-        //Fetching the data from potions.json, where all Informations for each potion are listed
+        //Fetching the data from potions.json, where all information for each potion are listed
         let answer: Response = await fetch("potions.json");
-        let offers: string = await answer.text();
+        let offers: string = await answer.text();// macht aud Jason ein format für Typescript utf 8 decodiert für inner HTML
         let detail: Data = JSON.parse(offers);
 
         //Creating the images 
@@ -52,7 +52,7 @@ namespace Potions {
             //Adding an alt-Attribute in case something goes wrong and the image can not be loaded
             img.setAttribute("alt", _items[i].name);
             //Adding the most important thing, the src-Attribute. As the filled potions are in the folder "bootles", we need to add this to the string
-            img.setAttribute("src", "bottles/" + _items[i].image);
+            img.setAttribute("src", "bottles/" + _items[i].image); // src= Quelle, where to find the photo
 
             //Creating the Span-Element (The Element that is shown on hover)
             let span: HTMLSpanElement = document.createElement("span");
@@ -106,7 +106,7 @@ namespace Potions {
     }
 
     function handleMove(_event: MouseEvent): void {
-        //Getting the positions of the Mouse
+     //Getting the positions of the Mouse
         let posX: number = _event.clientX;
         let posY: number = _event.clientY;  
 

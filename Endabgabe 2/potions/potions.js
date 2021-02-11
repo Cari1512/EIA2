@@ -4,9 +4,9 @@ var Potions;
     window.addEventListener("load", createElements);
     let label;
     async function createElements() {
-        //Fetching the data from potions.json, where all Informations for each potion are listed
+        //Fetching the data from potions.json, where all information for each potion are listed
         let answer = await fetch("potions.json");
-        let offers = await answer.text();
+        let offers = await answer.text(); // macht aud Jason ein format für Typescript utf 8 decodiert für inner HTML
         let detail = JSON.parse(offers);
         //Creating the images 
         for (let category in detail) {
@@ -47,7 +47,7 @@ var Potions;
             //Adding an alt-Attribute in case something goes wrong and the image can not be loaded
             img.setAttribute("alt", _items[i].name);
             //Adding the most important thing, the src-Attribute. As the filled potions are in the folder "bootles", we need to add this to the string
-            img.setAttribute("src", "bottles/" + _items[i].image);
+            img.setAttribute("src", "bottles/" + _items[i].image); // src= Quelle, where to find the photo
             //Creating the Span-Element (The Element that is shown on hover)
             let span = document.createElement("span");
             //Replacing _ with a blank space, so it looks prettier (but we needed the _ so the spaces do not throw errors). This thing is called a Regex (regular expression)
