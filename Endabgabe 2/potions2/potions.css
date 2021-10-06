@@ -1,0 +1,55 @@
+.content-wrapper {
+    display: flex;
+    flex-direction: row;
+}
+
+.content-wrapper > div {
+    padding: 10px 50px;
+}
+.shelf img {
+    width: 600px;
+    height: 600px;
+    position: absolute;
+    top: 40px;
+    z-index: 1;
+}
+
+.potions-wrapper {
+    position: relative;
+    z-index: 2;
+    width: 700px;
+    height: 700px;
+}
+.row {
+    margin-left: 40px;
+}
+
+.row div {
+    display: inline-block;
+}
+.row img {
+    width: 50px;
+    height: 105px;
+    padding: 0 5px;
+}
+
+.row-2 {
+    margin-top: 75px;
+}
+
+.row-3 {
+    margin-top: 100px;
+}
+
+.description {
+    display: none;
+    position: absolute;
+    z-index: 1000;
+    background-color: black;
+    color: white;
+    padding: 5px 10px; 
+}
+
+.potion:hover + .description {
+    display: block;
+}

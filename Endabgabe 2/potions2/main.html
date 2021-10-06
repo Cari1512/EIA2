@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Potions</title>
+    <link rel="stylesheet" href="potions.css">
+    <script src="Interface_Potion.js"></script>
+    <script src="potions.js"></script>
+    <script src="main.js"></script>
+</head>
+
+<body>
+    <div class="content-wrapper">
+        <canvas id="canvas"></canvas>
+
+        <div class="button-wrapper">
+            <button type="button" id="addRocket">+</button>
+
+            <list>
+                <ul id="rocketCollection">
+                </ul>
+            </list>
+
+            <button type="button" id="trashButton"></button>
+
+            <input id="savedFireworks" list="allFireworks">
+            <list id="allFireworks"></list>
+
+        </div>
+
+        <div class="shelf-wrapper">
+            <div class="shelf">
+                <img src="shelf.png">
+            </div>
+            <div class="potions-wrapper">
+            </div>
+
+            <input type="range" id="rocketIntensity">
+            <div class="rocketWrapper">
+                <img>
+                <img>
+                <img>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

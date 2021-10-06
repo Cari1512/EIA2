@@ -1,0 +1,139 @@
+{
+    "potions": [
+        {
+            "name": "Amortentia",
+            "image": "amortentia.png", 
+            "value": "ffddf1"
+        }, 
+        {
+            "name": "Forgetfulness-Potion", 
+            "image": "Forgetfulness_Potion.png",
+            "value": "ff9f24"
+        },
+        {
+            "name": "Memory-Potion", 
+            "image": "Memory_Potion.png",
+            "value": "e8cb6b"
+        },
+        {
+            "name": "Shrinking-Solution", 
+            "image": "Shrinking_Solution.png",
+            "value": "c7f918"
+        },
+        {
+            "name": "Volubilis-Potion", 
+            "image": "Volubilis_Potion.png",
+            "value": "f9f72e"
+        },
+        {
+            "name": "Developing-Poison", 
+            "image": "Developing_Poison.png",
+            "value": "bcd3ee"
+        },
+        {
+            "name": "Draught_of_Peace", 
+            "image": "draught_of_peace.png",
+            "value": "e0e0e0"
+        },
+        {
+            "name": "Heartbreak-Teardrops", 
+            "image": "Heartbreak_Teardrops.png",
+            "value": "eb2500"
+        },
+        {
+            "name": "Moonseed-Poison", 
+            "image": "Moonseed_Poison.png",
+            "value": "f4f2b6"
+        },
+        {
+            "name": "Sleeping-Draught", 
+            "image": "Sleeping_Draught.png",
+            "value": "831db8"
+        },
+        {
+            "name": "Wideeye-Potion", 
+            "image": "Wideeye_Potion.png",
+            "value": "1506c1"
+        },
+        {
+            "name": "Dragon-Poison", 
+            "image": "Dragon_Poison.png",
+            "value": "18601f"
+        },
+        {
+            "name": "Draught_of_living_Death", 
+            "image": "draught_of_living_death.png",
+            "value": "eee5fd"
+        },
+        {
+            "name": "Hiccoughing-Solution", 
+            "image": "Hiccoughing_Solution.png",
+            "value": "f9df00"
+        },
+        {
+            "name": "Occulus-Potion", 
+            "image": "Occulus_Potion.png",
+            "value": "f1cea3"
+        },
+        {
+            "name": "Truth-Serum", 
+            "image": "Truth_Serum.png",
+            "value": "cc8e34"
+        },
+        {
+            "name": "Wolfsbane-Potion", 
+            "image": "Wolfsbane_Potion.png",
+            "value": "d9eefe"
+        },
+        {
+            "name": "Laugh-Inducing_Potion", 
+            "image": "Laugh-Inducing_Potion.png",
+            "value": "ff7665"
+        },
+        {
+            "name": "Felix-Felicis", 
+            "image": "Felix_Filicis.png",
+            "value": "f8f8f8"
+        },
+        {
+            "name": "Invisibility-Potion", 
+            "image": "Invisibility_Potion.png",
+            "value": "848484"
+        },
+        {
+            "name": "Polyjuice-Potion", 
+            "image": "Polyjuice_Potion.png",
+            "value": "16878d"
+        },
+        {
+            "name": "Veritaserum", 
+            "image": "Veritaserum.png",
+            "value": "cecde8"
+        },
+        {
+            "name": "Cupid-Crystals", 
+            "image": "Cupid_Crystals.png",
+            "value": "ea07e1"
+        },
+        {
+            "name": "Kissing-Concoction", 
+            "image": "Kissing_Concoction.png",
+            "value": "ee92da"
+        },
+        {
+            "name": "Screaming-Snakes_Hair-Potion", 
+            "image": "Screaming_Snakes_Hair_Potion.png",
+            "value": "d4f8d3"
+        },
+        {
+            "name": "Maximum-Turbo-Farts_Potion", 
+            "image": "Maximum_Turbo_Farts_Potion.png",
+            "value": "dbf1d2"
+        },
+        {
+            "name": "Angels_Trumpet-Draught", 
+            "image": "Angels_Trumpet_Draught.png",
+            "value": "ae7021"
+        }
+    ]
+}
