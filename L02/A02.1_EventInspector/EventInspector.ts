@@ -4,6 +4,9 @@ namespace EventInspector{
     
     function handleLoad(_event: Event): void {
         document.addEventListener("customEvent", handlerFunction);
+        let btn: HTMLButtonElement = <HTMLButtonElement>document.querySelector("button");
+        let event: CustomEvent = new CustomEvent("CustomEvent", {bubbles: true, detail: {someKey: "hello"}});
+        btn.dispatchEvent(event);
         document.addEventListener("mousemove", setInfoBox);
         document.addEventListener("keyup", logInfo);
         document.addEventListener("click", logInfo);
@@ -36,9 +39,7 @@ namespace EventInspector{
         console.log(_event);
 
     }
-    let btn: HTMLButtonElement = <HTMLButtonElement>document.querySelector("button");
-    let event: CustomEvent = new CustomEvent("CustomEvent", {bubbles: true, detail: {someKey: "hello"}});
-    btn.dispatchEvent(event);
+    
 
     function handlerFunction (_event: Event){
         console.log(_event);

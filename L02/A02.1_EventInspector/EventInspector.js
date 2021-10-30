@@ -4,6 +4,9 @@ var EventInspector;
     window.addEventListener("load", handleLoad);
     function handleLoad(_event) {
         document.addEventListener("customEvent", handlerFunction);
+        let btn = document.querySelector("button");
+        let event = new CustomEvent("CustomEvent", { bubbles: true, detail: { someKey: "hello" } });
+        btn.dispatchEvent(event);
         document.addEventListener("mousemove", setInfoBox);
         document.addEventListener("keyup", logInfo);
         document.addEventListener("click", logInfo);
@@ -29,9 +32,6 @@ var EventInspector;
         console.log(_event.currentTarget);
         console.log(_event);
     }
-    let btn = document.querySelector("button");
-    let event = new CustomEvent("CustomEvent", { bubbles: true, detail: { someKey: "hello" } });
-    btn.dispatchEvent(event);
     function handlerFunction(_event) {
         console.log(_event);
     }
