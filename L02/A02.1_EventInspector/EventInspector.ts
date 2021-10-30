@@ -44,7 +44,7 @@ namespace EventInspector{
     
     function makingCustom (_event: Event): void{
         let btn: HTMLButtonElement = <HTMLButtonElement>document.querySelector("button");
-        let event: CustomEvent = new CustomEvent("CustomEvent");
+        let event: CustomEvent = new CustomEvent("customEvent");
         btn.dispatchEvent(event);
     }
 
