@@ -33,7 +33,7 @@ var EventInspector;
     }
     function makingCustom(_event) {
         let btn = document.querySelector("button");
-        let event = new CustomEvent("customEvent");
+        let event = new CustomEvent("customEvent", { bubbles: true });
         btn.dispatchEvent(event);
     }
     function handlerFunction(_event) {

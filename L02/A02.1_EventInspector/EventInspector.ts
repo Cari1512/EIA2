@@ -34,7 +34,7 @@ namespace EventInspector{
 
 
     }
-    function logInfo(_event: Event): void{
+    function logInfo(_event: Event): void {
 
         console.log(_event.target);
         console.log(_event.currentTarget);
@@ -42,13 +42,13 @@ namespace EventInspector{
 
     }
     
-    function makingCustom (_event: Event): void{
+    function makingCustom (_event: Event): void {
         let btn: HTMLButtonElement = <HTMLButtonElement>document.querySelector("button");
-        let event: CustomEvent = new CustomEvent("customEvent");
+        let event: CustomEvent = new CustomEvent("customEvent", {bubbles: true});
         btn.dispatchEvent(event);
     }
 
-    function handlerFunction (_event: Event): void{
+    function handlerFunction (_event: Event): void {
         console.log(_event);
         console.log("Custom-Event worked");
        
