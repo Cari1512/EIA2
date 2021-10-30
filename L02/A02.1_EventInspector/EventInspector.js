@@ -3,10 +3,8 @@ var EventInspector;
 (function (EventInspector) {
     window.addEventListener("load", handleLoad);
     function handleLoad(_event) {
-        document.addEventListener("customEvent", handlerFunction);
         let btn = document.querySelector("button");
-        let event = new CustomEvent("CustomEvent", { bubbles: true, detail: { someKey: "hello" } });
-        btn.dispatchEvent(event);
+        btn.addEventListener("click", makingCustom);
         document.addEventListener("mousemove", setInfoBox);
         document.addEventListener("keyup", logInfo);
         document.addEventListener("click", logInfo);
@@ -16,6 +14,7 @@ var EventInspector;
         let div = document.querySelector("div");
         div.addEventListener("keyup", logInfo);
         div.addEventListener("click", logInfo);
+        document.addEventListener("customEvent", handlerFunction);
     }
     function setInfoBox(_event) {
         let x = _event.pageX;
@@ -32,8 +31,14 @@ var EventInspector;
         console.log(_event.currentTarget);
         console.log(_event);
     }
+    function makingCustom(_event) {
+        let btn = document.querySelector("button");
+        let event = new CustomEvent("CustomEvent");
+        btn.dispatchEvent(event);
+    }
     function handlerFunction(_event) {
         console.log(_event);
+        console.log("Custom-Event worked");
     }
 })(EventInspector || (EventInspector = {}));
 //# sourceMappingURL=EventInspector.js.map
