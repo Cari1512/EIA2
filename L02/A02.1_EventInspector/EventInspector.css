@@ -1,0 +1,48 @@
+span{
+    position:fixed;
+}
+div [name="div0"] {
+    height: 600px;
+    width: 600px;
+    background: #97aca1;
+}
+div [name="div1"] {
+    height: 600px;
+    width: 600px;
+    background: #bdd7ca;
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+}
+.container {
+    display: grid;
+    grid-template-columns: 600px 600px; 
+    grid-template-rows: 600px;
+    grid-column-gap: 50px;
+  }
+
+span {
+    position: fixed;
+    border: 2px solid #474245;
+    background-color: #efdfe6;
+    width: 7%;
+    height: 7%;
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+}
+body {
+    background-color: #f7eff2;
+    margin: 0 100px;
+}
+h1{
+    color: #474245;
+}
+.pressMe{
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    border: 2px solid #474245;
+    min-height: 100px;
+    padding: 20px;
+}

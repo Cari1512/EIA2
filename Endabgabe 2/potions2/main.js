@@ -2,14 +2,14 @@
 var Firework;
 (function (Firework) {
     let canvas;
-    let crc2;
+    //let crc2: CanvasRenderingContext2D;
     //let rockets: Rocket[]; 
     let rocketSizes;
     let addNew;
     window.addEventListener("load", handleLoad);
     function handleLoad() {
         canvas = document.getElementById("canvas");
-        crc2 = canvas.getContext("2d");
+        //crc2 = <CanvasRenderingContext2D>canvas.getContext("2d");
         canvas.addEventListener("click", fireRocket);
         canvas.width = 500;
         canvas.height = 500;

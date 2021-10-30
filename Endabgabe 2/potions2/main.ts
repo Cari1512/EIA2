@@ -1,6 +1,6 @@
 namespace Firework {
     let canvas: HTMLCanvasElement;
-    let crc2: CanvasRenderingContext2D;
+    //let crc2: CanvasRenderingContext2D;
     //let rockets: Rocket[]; 
 
     let rocketSizes: HTMLDivElement;
@@ -10,7 +10,7 @@ namespace Firework {
 
     function handleLoad(): void {
         canvas = <HTMLCanvasElement>document.getElementById("canvas");
-        crc2 = <CanvasRenderingContext2D>canvas.getContext("2d");
+        //crc2 = <CanvasRenderingContext2D>canvas.getContext("2d");
 
         canvas.addEventListener("click", fireRocket);
         canvas.width = 500;
