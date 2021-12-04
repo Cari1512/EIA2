@@ -1,6 +1,7 @@
 "use strict";
 var Farm;
 (function (Farm) {
+    //insperation durch Dell'Oro, Amélie 
     window.addEventListener("DOMContentLoaded", handleLoad);
     let cow = new Farm.Animal("Cow", "Dottie", "Moo", "Grass", 30, 210);
     let chicken = new Farm.Animal("Chicken", "Drumstick", "Cluck", "Grains", 4, 24);

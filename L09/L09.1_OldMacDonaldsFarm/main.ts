@@ -1,5 +1,7 @@
 namespace Farm {
 
+    //insperation durch Dell'Oro, Amélie 
+
     window.addEventListener("DOMContentLoaded", handleLoad);
 
     let cow = new Animal("Cow", "Dottie", "Moo", "Grass", 30, 210);
