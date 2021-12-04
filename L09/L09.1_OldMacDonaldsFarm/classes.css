@@ -1,0 +1,28 @@
+#song {
+    margin: auto;
+    margin-top: 0px;
+    width: fit-content;
+    height: 100%;
+    min-width: 670px;
+    background: #f2d0c1;
+    padding: 50px 100px 0px 100px;
+    text-align: center;
+}
+#food {
+    margin-top: 100px;
+    background: #f6c7a5;
+    position: absolute;
+    right: 100px;
+    top: 20px;
+    padding: 20px 30px 10px 30px;
+}
+H1 {
+    text-align: center;
+    color: #f6c7a5;
+    
+}
+
+body {
+    background-image: url(cow.jpg);
+    background-size: cover;
+}
