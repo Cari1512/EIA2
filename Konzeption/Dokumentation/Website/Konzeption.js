@@ -11,11 +11,13 @@ var ourLostTrees;
         startDiv = document.querySelector("#overlay");
         startDiv.innerHTML = "";
         startDiv.classList.remove("overlayStyle");
-        mainsite();
+        //startDiv.classList.add("content");
+        hndlayout();
     }
-    function mainsite() {
-        startDiv = document.querySelector("#overlay");
-        startDiv.classList.add("newStyle");
+    function hndlayout() {
+        let headline = document.createElement("p");
+        headline.innerHTML = "Our Lost Trees";
+        startDiv.appendChild(headline);
     }
 })(ourLostTrees || (ourLostTrees = {}));
 //# sourceMappingURL=Konzeption.js.map

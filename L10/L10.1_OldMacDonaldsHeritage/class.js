@@ -1,6 +1,6 @@
 "use strict";
-var Farm;
-(function (Farm) {
+var Heritage;
+(function (Heritage) {
     class Animal {
         constructor(_animal, _name, _sound, _foodType, _dailyAmount, _totalFood) {
             this.animal = _animal;
@@ -27,6 +27,6 @@ var Farm;
                 E-I-E-I-O <br><br>`;
         }
     }
-    Farm.Animal = Animal;
-})(Farm || (Farm = {}));
+    Heritage.Animal = Animal;
+})(Heritage || (Heritage = {}));
 //# sourceMappingURL=class.js.map

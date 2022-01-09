@@ -18,12 +18,13 @@ namespace ourLostTrees {
         startDiv = <HTMLDivElement>document.querySelector("#overlay");
         startDiv.innerHTML = "";
         startDiv.classList.remove("overlayStyle");
-        mainsite();
-    }
-
-    function mainsite(): void {
-        startDiv = <HTMLDivElement>document.querySelector("#overlay");
-       startDiv.classList.add("newStyle");
-       
-    }
+       //startDiv.classList.add("content");
+       hndlayout();
+    } 
+ function hndlayout(): void{
+        let headline: HTMLParagraphElement = document.createElement("p");
+        headline.innerHTML = "Our Lost Trees" ;
+        startDiv.appendChild(headline);
+        
+ }
 }
