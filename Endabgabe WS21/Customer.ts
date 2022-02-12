@@ -27,8 +27,8 @@ namespace KebapHouse {
     }
 
     public move(_timeslice: number): void {
-      super.move(_timeslice);
-      this.velocity.set(0, -10);
+      
+      //this.velocity.set(0, -10);
       switch (this.state) {
         case CUSTOMER_SITUATION.QUEUE:
           if (this.position == new Vector(this.position.x, 300)) {
@@ -40,6 +40,7 @@ namespace KebapHouse {
             this.velocity.set(0,-10);
           }
       }
+      super.move(_timeslice);
 
     }
 

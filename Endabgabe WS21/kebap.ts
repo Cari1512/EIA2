@@ -7,12 +7,22 @@ namespace KebapHouse {
   let start: HTMLButtonElement;
   let customers: Customer[] = [];
 
+  let noteNumber: number;
   let customerNumber: number;
   let breakFrequency: number;
+  
 
   function hndLoad(): void {
+    let range: HTMLInputElement = <HTMLInputElement>document.getElementById("slider");
+    range.addEventListener("mouseup", hndRange);
     start = <HTMLButtonElement>document.querySelector("#startButton");
     start.addEventListener("click", hndStart);
+  }
+  function hndRange(): void {
+    let note: HTMLInputElement = <HTMLInputElement>document.getElementById("slider");
+    noteNumber = parseInt(note.value);
+    let box = document.getElementById("range");
+    box!.innerHTML = noteNumber + "L";
   }
 
   function hndStart(_event: Event): void {
@@ -22,11 +32,14 @@ namespace KebapHouse {
     breakFrequency = parseInt(breakFrequencyElement.value);
     console.log(breakFrequency, customerNumber);
 
+    
+
     startDiv = <HTMLDivElement>document.querySelector("#overlay");
     startDiv.innerHTML = "";
     startDiv.classList.remove("overlayStyle");
     startDiv.classList.add("content");
     hndLayout();
+    
   }
 
   function hndLayout(): void {

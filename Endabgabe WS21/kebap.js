@@ -5,11 +5,20 @@ var KebapHouse;
     let startDiv;
     let start;
     let customers = [];
+    let noteNumber;
     let customerNumber;
     let breakFrequency;
     function hndLoad() {
+        let range = document.getElementById("slider");
+        range.addEventListener("mouseup", hndRange);
         start = document.querySelector("#startButton");
         start.addEventListener("click", hndStart);
+    }
+    function hndRange() {
+        let note = document.getElementById("slider");
+        noteNumber = parseInt(note.value);
+        let box = document.getElementById("range");
+        box.innerHTML = noteNumber + "L";
     }
     function hndStart(_event) {
         let customerNumberElement = document.getElementById("customernumber");

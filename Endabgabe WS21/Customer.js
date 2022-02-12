@@ -24,8 +24,7 @@ var KebapHouse;
             KebapHouse.crc2.restore();
         }
         move(_timeslice) {
-            super.move(_timeslice);
-            this.velocity.set(0, -10);
+            //this.velocity.set(0, -10);
             switch (this.state) {
                 case CUSTOMER_SITUATION.QUEUE:
                     if (this.position == new KebapHouse.Vector(this.position.x, 300)) {
@@ -37,6 +36,7 @@ var KebapHouse;
                         this.velocity.set(0, -10);
                     }
             }
+            super.move(_timeslice);
         }
         generateOrder() {
             let allOrders = [
