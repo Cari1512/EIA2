@@ -16,6 +16,7 @@ namespace KebapHouse {
     }
 
     public draw(): void {
+     
       crc2.beginPath();
       crc2.arc(this.position.x, this.position.y, 30, 0, 2 * Math.PI);
       //console.log(this.position.x, this.position.y);
@@ -27,18 +28,18 @@ namespace KebapHouse {
 
     public move(_timeslice: number): void {
       super.move(_timeslice);
-      this.velocity.set(10, 0);
-     /*  switch (this.state) {
+      this.velocity.set(0, -10);
+      switch (this.state) {
         case CUSTOMER_SITUATION.QUEUE:
-          if (this.position == new Vector(300, 300)) {
+          if (this.position == new Vector(this.position.x, 300)) {
             this.velocity.set(0, 0);
             this.state = CUSTOMER_SITUATION.WAITING;
             break;
           }
           else {
-            this.velocity.set(150,0);
+            this.velocity.set(0,-10);
           }
-      } */
+      }
 
     }
 

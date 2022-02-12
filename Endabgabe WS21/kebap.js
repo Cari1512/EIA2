@@ -37,15 +37,15 @@ var KebapHouse;
     function startGame() {
         customers.push(new KebapHouse.Customer(new KebapHouse.Vector(400, 350)));
         customers.push(new KebapHouse.Customer(new KebapHouse.Vector(450, 400)));
-        customers.push(new KebapHouse.Customer(new KebapHouse.Vector(300, 500)));
+        customers.push(new KebapHouse.Customer(new KebapHouse.Vector(280, 500)));
         update();
     }
     function update() {
-        let lastFrame = performance.now();
-        let frameTime = performance.now() - lastFrame;
+        // let lastFrame: number = performance.now();
+        // let frameTime: number = performance.now() - lastFrame;
         for (let person of customers) {
             person.draw();
-            person.move(frameTime / 1000);
+            person.move(200 / 1000);
         }
         window.requestAnimationFrame(update);
     }

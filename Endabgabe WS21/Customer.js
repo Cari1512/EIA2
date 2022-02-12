@@ -25,18 +25,18 @@ var KebapHouse;
         }
         move(_timeslice) {
             super.move(_timeslice);
-            this.velocity.set(10, 0);
-            /*  switch (this.state) {
-               case CUSTOMER_SITUATION.QUEUE:
-                 if (this.position == new Vector(300, 300)) {
-                   this.velocity.set(0, 0);
-                   this.state = CUSTOMER_SITUATION.WAITING;
-                   break;
-                 }
-                 else {
-                   this.velocity.set(150,0);
-                 }
-             } */
+            this.velocity.set(0, -10);
+            switch (this.state) {
+                case CUSTOMER_SITUATION.QUEUE:
+                    if (this.position == new KebapHouse.Vector(this.position.x, 300)) {
+                        this.velocity.set(0, 0);
+                        this.state = CUSTOMER_SITUATION.WAITING;
+                        break;
+                    }
+                    else {
+                        this.velocity.set(0, -10);
+                    }
+            }
         }
         generateOrder() {
             let allOrders = [
