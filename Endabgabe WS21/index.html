@@ -9,6 +9,8 @@
     <script src="Vector.js"></script>
     <script src="Human.js"></script>
     <script src="Customer.js"></script>
+    <script src="Order.js"></script>
+    <script src="Ingredient.js"></script>
     <link rel="stylesheet" href="style.css" />
     <link
     rel="stylesheet"
@@ -36,12 +38,12 @@
     
     </fieldset>
     
-    <fieldset class="fieldsets" id="staffNumber">
+    <fieldset class="fieldsets" id="staffNumberFieldset">
     
         <legend>Number of Staff</legend>
     
             <div id= staff>
-            <select>
+            <select class="numberOfStaff" id="numberOfStaff">
                 <option value= "1" type= "radio" name="staffnumber">1</option>
                 <option value= "2"type= "radio" name="staffnumber">2</option>
                 <option value= "3" type= "radio"  name="staffnumber">3</option>
@@ -51,11 +53,11 @@
         </div>
     </fieldset>
     
-    <fieldset class="fieldsets" id="costumerNumber">
+    <fieldset class="fieldsets" id="customerNumberFieldset">
     
         <legend>Costumers per hour</legend>
     
-        <input type="number" id="costumernumber" name="costumernumber" min="5" max="25" step="5">
+        <input type="number" id="customernumber" name="customernumber" min="5" max="25" step="5">
         <label for="costumernumber">per hour</label> <br />
     
     </fieldset>
@@ -64,7 +66,7 @@
     
         <legend>break frequency for staff</legend>
     
-        <input type="text"  name="frequency" value="" required minlength="2" maxlength="14">
+        <input type="text"  name="frequency" id="frequency" value="" required minlength="2" maxlength="14">
         <label for="frequency">breaks per day</label> <br />
     
     </fieldset>
