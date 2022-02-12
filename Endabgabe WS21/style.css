@@ -1,0 +1,97 @@
+body{
+    font-family: 'Inter',sans-serif;
+    overflow: hidden;
+    
+    }
+
+.overlayStyle{
+    position: absolute; 
+    width: 100%;
+    height: 100vh;
+    background: #E28F83;
+    background: linear-gradient(90deg, #E28F83 50%, #4A503D 50%, #FAF2DA 100%);
+    top: 0%;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content:right;
+    align-items: center;
+    color: #eee;
+    font-size: xx-large;
+}
+    @keyframes Slide_up{
+        0%{transform: translateY(250px);}
+        100%{transform: translateY(0)}
+    }
+    h1 {
+        animation: Slide_up 1.4s ease;
+        vertical-align: top;
+        transition: opacity 0.3s;
+        -webkit-transition: opacity 0.3s;
+        opacity: 1;
+    }
+    span {
+        animation: Slide_up 2.2s ease;
+    
+        vertical-align: top;
+        transition: opacity 0.3s;
+        -webkit-transition: opacity 0.3s;
+        opacity: 1;
+          
+    }
+    span:hover {
+        opacity: 0.2;
+      }
+      h1:hover {
+        opacity: 0.2;
+      }
+.FormStyle {
+    animation: Slide_up 2.2s ease;
+    
+        vertical-align: top;
+        transition: opacity 0.3s;
+        -webkit-transition: opacity 0.3s;
+        opacity: 1;
+        margin: 50px;
+        font-size:large;
+        background: #E28F83 50%;
+}
+fieldset{
+    margin: 20px;
+}
+#startButton{
+    margin-left: 20px;
+    font-size:large;
+    color:white;
+    background-color:#E28F83;
+}
+
+.content{
+    
+       position: absolute; 
+        width: 100%;
+        height: 100vh;
+        top: 0%;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content:right;
+        align-items: center;
+        color:#4A503D;
+        font-size: xx-large;
+       background-color:white;
+        
+    
+}
+canvas{
+    animation: Slide_up 2.2s ease;
+    
+        vertical-align: top;
+        transition: opacity 0.3s;
+        -webkit-transition: opacity 0.3s;
+    width: 874px;
+    height:700px;
+    background-image:url('img/floorplan.png');
+   
+    
+}
