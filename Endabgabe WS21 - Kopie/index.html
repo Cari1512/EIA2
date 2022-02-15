@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kebap</title>
+    <script src="kebap.js"></script>
+    <script src="Vector.js"></script>
+    <script src="Human.js"></script>
+    <script src="Customer.js"></script>
+    <script src="Staff.js"></script>"
+    <script src="Order.js"></script>
+    <script src="Ingredient.js"></script>
+    <script src="Container.js"></script>
+    <script src="Storage.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <link
+    rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+  />
+</head>
+
+<body>
+
+    <div id="overlay" class = "overlayStyle">
+        
+        <h1>Kebap House</h1>
+        <span>Choose your Shop</span>
+        <div class = "FormStyle">
+
+        <form id="form">
+            <div id="formSettings">
+    
+                <fieldset class="fieldsets" id="containerAmount">
+    
+                    <legend>Choose the size of your containers</legend>
+        <input type="range" id="slider" name="Amount" min="2" max="10" step="1"> <p id="range">6L</p>
+        
+    
+    </fieldset>
+    
+    <fieldset class="fieldsets" id="staffNumberFieldset">
+    
+        <legend>Number of Staff</legend>
+    
+            <div id= staff>
+            <select class="numberOfStaff" id="numberOfStaff">
+                <option value= "1" type= "radio" name="staffnumber">1</option>
+                <option value= "2"type= "radio" name="staffnumber">2</option>
+                <option value= "3" type= "radio"  name="staffnumber">3</option>
+            </select>
+        </div>
+    </fieldset>
+    
+    <fieldset class="fieldsets" id="customerNumberFieldset">
+    
+        <legend>Costumers per hour</legend>
+    
+        <input type="number" id="customernumber" name="customernumber" min="5" max="25" step="5">
+        <label for="costumernumber">per hour</label> <br />
+    
+    </fieldset>
+    
+    <fieldset class="fieldsets" id="fsGameword">
+    
+        <legend>Break Frequency for Staff</legend>
+    
+        <input type="text"  name="frequency" id="frequency" value="" required minlength="2" maxlength="14">
+        <label for="frequency">breaks per 8-hour shift</label> <br />
+    
+    </fieldset>
+    
+    <button type="button" id="startButton">START</button>
+    
+    </div>
+    </form>
+       
+    </div>
+</div>
+
+
+          
+
+</body>
+</body>
+</html>
