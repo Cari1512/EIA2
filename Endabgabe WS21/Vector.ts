@@ -31,5 +31,17 @@ namespace KebapHouse {
             let copy: Vector = new Vector(this.x, this.y);
             return (copy);
         }
+
+        public round(): Vector {
+            let roundedVector: Vector = new Vector(Math.round(this.x), Math.round(this.y));
+            return roundedVector;
+        }
+
+        public compare(_vector: Vector): boolean {
+            if (Math.round(this.x) == Math.round(_vector.x) && Math.round(this.y) == Math.round(_vector.y)) {
+                return true;
+            }
+            return false;
+        }
     }
 }

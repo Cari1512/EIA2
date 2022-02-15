@@ -38,6 +38,10 @@ h1 {
     opacity: 1;
 }
 
+p {
+    user-select: none;
+}
+
 span {
     animation: Slide_up 2.2s ease;
 
@@ -67,8 +71,6 @@ h1:hover {
     font-size: large;
     background: #E28F83 50%;
 }
-
-
 
 fieldset {
     margin: 20px;
@@ -107,5 +109,114 @@ canvas {
     -webkit-transition: opacity 0.3s; */
     background-image: url('img/floorplan.png');
 
+}
+
+progress {
+    display: block;
+    position: absolute;
+    top: 34%;
+    transform: rotate(-90deg);
+    height: 40px;
+    width: 54px;
+    color: #4A503D;
+    background-color: #FAF2DA;
+    border-color: black;
+    border-width: 3px;
+    border-radius:7px;
+  
+}
+progress::-moz-progress-bar {
+    background: #4A503D;
+    border-radius:5px;
+  }
+  
+  progress::-webkit-progress-value {
+    background: #4A503D;
+    border-radius:5px;
+  }
+  
+  
+
+
+
+.staffWindow {
+    display: block;
+    position: absolute;
+    left: 80%;
+    top: 10%;
+    color: #4A503D;
+    font-size: large;
+    
 
 }
+.staffWindow button{
+    width: 200px;
+}
+.ingredientWindow {
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    height: 600px;
+    position: absolute;
+    top: 20%;
+    left: 10%;
+    font-size: small;
+    overflow: scroll;
+    overflow-x: scroll;
+    overflow-y: scroll;
+    
+}
+.ingredientWindow button{
+    width: 100px;
+}
+.ingredientWindow div {
+    padding-bottom: 20px;
+   
+}
+
+.ingredientWindow div p {
+    margin: 5px;
+}
+button {
+    background-color: #E28F83;
+   
+}
+
+#statisticDiv {
+    height: 200px;
+    width: 220px;
+    display: block;
+    flex-direction: column;
+}
+
+#statisticDiv progress {
+    position: relative;
+    width: 130px;
+    height: 10px;
+    transform: none;
+}
+
+#currentOrder {
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    height: 200px;
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    font-size: small;
+ 
+}
+#finishOrderButton {
+    display: flex;
+    flex-direction: column;
+    width: 100px;
+    height: 20px;
+    position: absolute;
+    top: 15%;
+    left: 10%;
+    font-size: small;
+    background-color: #8E9775;
+}
+
+    

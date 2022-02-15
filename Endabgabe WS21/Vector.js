@@ -25,6 +25,16 @@ var KebapHouse;
             let copy = new Vector(this.x, this.y);
             return (copy);
         }
+        round() {
+            let roundedVector = new Vector(Math.round(this.x), Math.round(this.y));
+            return roundedVector;
+        }
+        compare(_vector) {
+            if (Math.round(this.x) == Math.round(_vector.x) && Math.round(this.y) == Math.round(_vector.y)) {
+                return true;
+            }
+            return false;
+        }
     }
     KebapHouse.Vector = Vector;
 })(KebapHouse || (KebapHouse = {}));

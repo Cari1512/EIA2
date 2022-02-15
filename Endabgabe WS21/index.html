@@ -9,8 +9,11 @@
     <script src="Vector.js"></script>
     <script src="Human.js"></script>
     <script src="Customer.js"></script>
+    <script src="Staff.js"></script>"
     <script src="Order.js"></script>
     <script src="Ingredient.js"></script>
+    <script src="Container.js"></script>
+    <script src="Storage.js"></script>
     <link rel="stylesheet" href="style.css" />
     <link
     rel="stylesheet"
@@ -32,8 +35,7 @@
                 <fieldset class="fieldsets" id="containerAmount">
     
                     <legend>Choose the size of your containers</legend>
-        
-        <input type="range" id="slider" name="Amount" min="2" max="20" step="2"> <p id="range">8L<p>
+        <input type="range" id="slider" name="Amount" min="2" max="10" step="1"> <p id="range">6L</p>
         
     
     </fieldset>
@@ -47,8 +49,6 @@
                 <option value= "1" type= "radio" name="staffnumber">1</option>
                 <option value= "2"type= "radio" name="staffnumber">2</option>
                 <option value= "3" type= "radio"  name="staffnumber">3</option>
-                <option value= "4" type= "radio"  name="staffnumber">4</option>
-                <option value= "5" type= "radio"  name="staffnumber">5</option>
             </select>
         </div>
     </fieldset>
@@ -64,10 +64,10 @@
     
     <fieldset class="fieldsets" id="fsGameword">
     
-        <legend>break frequency for staff</legend>
+        <legend>Break Frequency for Staff</legend>
     
         <input type="text"  name="frequency" id="frequency" value="" required minlength="2" maxlength="14">
-        <label for="frequency">breaks per day</label> <br />
+        <label for="frequency">breaks per 8-hour shift</label> <br />
     
     </fieldset>
     
