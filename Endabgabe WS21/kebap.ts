@@ -3,6 +3,7 @@ Aufgabe: Endabagbe Döner Trainer
 Name: Carianne Sauermann
 Matrikel: 263141
 Datum: 15.02.22
+Unterstützung: Alexander Reiprich MIB
 */
 
 namespace KebapHouse {

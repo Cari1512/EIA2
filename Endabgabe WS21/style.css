@@ -200,7 +200,7 @@ button {
     display: flex;
     flex-direction: column;
     width: 250px;
-    height: 200px;
+    height: 100px;
     position: absolute;
     top: 10%;
     left: 10%;
